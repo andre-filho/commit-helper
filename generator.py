@@ -1,4 +1,3 @@
-# import subprocess
 import os
 
 tag_type = int(input("""
