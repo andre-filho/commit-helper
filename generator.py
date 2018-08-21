@@ -15,4 +15,5 @@ if tag_type == 1:
     tag = tag.lower()
     os.system("git commit -m '%s(%s): %s'" % (tag, context, msg))
 else:
+    tag.upper()
     os.system("git commit -m '%s: %s'" % (tag, msg))
