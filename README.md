@@ -1,0 +1,2 @@
+# commit-helper
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5d8bc401ccf042548f17dabedde4037a)](https://app.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&utm_medium=referral&utm_content=andre-filho/commit-helper&utm_campaign=Badge_Grade_Settings)
