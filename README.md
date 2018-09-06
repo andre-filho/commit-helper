@@ -12,6 +12,24 @@ Keeping a commit policy may sound like an easy thing to do, but in reality we bo
 
 Sometimes we, the devs, go _full-loco_ while programming and make mistakes when commiting. That's fine, everyone makes mistakes. But, what if those mistakes could be avoided?
 
+## Instalation
+Just follow the commands below:
+
+```bash
+
+  # if you don't have git, run $ sudo apt install git first
+
+  # clone the repo into your home
+  $ git clone https://github.com/andre-filho/commit-helper.git ~/.commit-helper
+
+  # create a function in your .bashrc
+  $ echo "commit(){ python3 ~/.commit-helper/generator.py; }" >> ~/.bashrc
+
+  # reload terminal
+  $ source ~/.bashrc
+
+```
+
 ## Project's maintainers
 | **Name** | **Username** |
 | :--------: | :-----: |
