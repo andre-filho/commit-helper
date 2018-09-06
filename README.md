@@ -5,7 +5,7 @@
 # Commit Helper
 ---
 ## What does it do?
-The commit-helper do exactly what it's name suggest: helps you create and maintain your commit policy by tailoring your commit message into a commit comvention.
+The commit-helper do exactly what it's name suggest: helps you create and maintain your commit policy by tailoring your commit message into a commit convention.
 
 ## Why should I use this?
 Keeping a commit policy may sound like an easy thing to do, but in reality we both know that it isn't.
