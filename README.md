@@ -3,7 +3,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6)](https://www.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andre-filho/commit-helper&amp;utm_campaign=Badge_Grade)
 
 # Commit Helper
----
 ## What does it do?
 The commit-helper do exactly what it's name suggest: helps you create and maintain your commit policy by tailoring your commit message into a commit convention.
 
@@ -33,4 +32,4 @@ Just follow the commands below:
 ## Project's maintainers
 | **Name** | **Username** |
 | :--------: | :-----: |
-| André de Sousa Costa Filho | andre-filho |
+| André de Sousa Costa Filho | @andre-filho |
