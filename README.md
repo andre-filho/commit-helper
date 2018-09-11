@@ -29,6 +29,12 @@ Just follow the commands below:
 
 ```
 
+## Usage and configuration
+
+Configuration tags available:
+<!-- list here all tags that are used in configuration file -->
+ - 
+
 ## Project's maintainers
 | **Name** | **Username** |
 | :--------: | :-----: |
