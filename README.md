@@ -31,9 +31,37 @@ Just follow the commands below:
 
 ## Usage and configuration
 
-Configuration tags available:
+For this project to work smoothly, you must have in your working directory a file named **commiter.yml**. In this file you must pass the commit convention that you want to use, following the example:
+
+```yaml
+convention: angular
+# or
+convention: changelog
+# or even
+convention: symphony
+```
+
+
+
+Supported conventions available:
 <!-- list here all tags that are used in configuration file -->
- - 
+
+ - angular/karma
+ - changelog
+ - symphony
+
+In the event of no commiter.yml file presence, you will be prompted with the following option menu:
+
+```bash
+No config files found!
+Running default script...
+    what type of commit convention are you using?
+    1- Karma/Angular
+    2- Conventional changelog
+    3- Symfony CMF
+```
+
+
 
 ## Project's maintainers
 | **Name** | **Username** |
