@@ -1,17 +1,15 @@
 import os
 
 from pathlib import Path
-from yaml import load
+from yaml import safe_load
 from yaml import YAMLError
 
 from utils import run_config
 from utils import angular_convention
 from utils import changelog_convention
 from utils import symphony_convention
-from utils import possible_configurations
 
 tag = ''
-# msg = ''
 tag_is_lowercase = False
 tag_is_uppercase = False
 tag_is_capitalized = False
@@ -22,7 +20,7 @@ file_path = Path("commiter.yml")
 if file_path.is_file():
     with open(str(file_path), 'r') as stream:
         try:
-            config = load(stream)
+            config = safe_load(stream)
             tag, tag_is_capitalized, tag_is_lowercase, tag_is_uppercase, convention = run_config(config, tag, tag_is_capitalized, tag_is_lowercase, tag_is_uppercase, convention)
             if convention != '' or convention != 'custom':
                 if convention == 'angular':
