@@ -1,5 +1,3 @@
-import os
-
 from pathlib import Path
 from yaml import safe_load
 from yaml import YAMLError
