@@ -33,7 +33,7 @@ def get_text(context=False):
     else:
         tag = str(input("type the tag: "))
         msg = str(input("type the commit message: ")).lower()
-        return tag, msg        
+        return tag, msg
 
 def angular_convention():
     tag, msg, context = get_text(context=True)
