@@ -11,12 +11,18 @@ Keeping a commit policy may sound like an easy thing to do, but in reality we bo
 
 Sometimes we, the devs, go _full-loco_ while programming and make mistakes when commiting. That's fine, everyone makes mistakes. But, what if those mistakes could be avoided?
 
-## Instalation
+## Installation
+
 Just follow the commands below:
 
 ```bash
 
-  # if you don't have git, run $ sudo apt install git first
+  # make sure you have the dependencies installed in your machine and
+  # have git ready to use
+
+  $ apt install python3-pip git
+
+  $ pip3 install pyyaml
 
   # clone the repo into your home
   $ git clone https://github.com/andre-filho/commit-helper.git ~/.commit-helper
