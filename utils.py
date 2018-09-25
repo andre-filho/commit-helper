@@ -50,5 +50,10 @@ def symphony_convention():
     tag = tag.capitalize()
     os.system("git commit -m '[%s] %s'" % (tag, msg))
 
+def just_message():
+    msg = str(input("commit message: "))
+    os.system("git commit -m '%s'" % msg.capitalize())
+
+# FUTURE: implement
 def custom_convention():
     pass
