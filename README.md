@@ -9,7 +9,7 @@ The commit-helper do exactly what it's name suggest: helps you create and mainta
 ## Why should I use this?
 Keeping a commit policy may sound like an easy thing to do, but in reality we both know that it isn't.
 
-Sometimes we, the devs, go _full-loco_ while programming and make mistakes when commiting. That's fine, everyone makes mistakes. But, what if those mistakes could be avoided?
+Sometimes we, the developers, go _full-loco_ while programming and make mistakes when commiting. That's fine, everyone makes mistakes. But, what if those mistakes could be avoided?
 
 ## Installation
 
@@ -40,11 +40,19 @@ Just follow the commands below:
 For this project to work smoothly, you must have in your working directory a file named **commiter.yml**. In this file you must pass the commit convention that you want to use, following the example:
 
 ```yaml
-convention: angular
+convention: angular   # tag(context): commit message
+
 # or
-convention: changelog
-# or even
-convention: symphony
+
+convention: changelog # TAG: commit message
+
+# or
+
+convention: symphony  # [Tag] commit message
+
+# and if you're feeling adventurous
+
+convention: none      # Commit message
 ```
 
 
@@ -62,9 +70,12 @@ In the event of no commiter.yml file presence, you will be prompted with the fol
 No config files found!
 Running default script...
     what type of commit convention are you using?
-    1- Karma/Angular
-    2- Conventional changelog
-    3- Symfony CMF
+
+    (default): No convention
+    1: Karma/Angular
+    2: Conventional changelog
+    3: Symfony CMF
+
 ```
 
 
