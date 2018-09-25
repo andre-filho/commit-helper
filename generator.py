@@ -21,19 +21,18 @@ if file_path.is_file():
         try:
             config = safe_load(stream)
             tag, tag_is_capitalized, tag_is_lowercase, tag_is_uppercase, convention = run_config(config, tag, tag_is_capitalized, tag_is_lowercase, tag_is_uppercase, convention)
-            if convention != '' or convention != 'custom':
-                if convention == 'angular':
-                    print('You are using the %s convention' % convention)
-                    angular_convention()
-                elif convention ==  'changelog':
-                    print('You are using the %s convention' % convention)
-                    changelog_convention()
-                elif convention == 'symphony':
-                    print('You are using the %s convention' % convention)
-                    symphony_convention()
-                elif convention == 'none':
-                    just_message()
-            else:
+            if convention == 'angular':
+                print('You are using the %s convention' % convention)
+                angular_convention()
+            elif convention ==  'changelog':
+                print('You are using the %s convention' % convention)
+                changelog_convention()
+            elif convention == 'symphony':
+                print('You are using the %s convention' % convention)
+                symphony_convention()
+            elif convention == 'none':
+                just_message()
+            elif convention == 'custom':
                 custom_convention()
         except YAMLError as exc:
             print(exc)
