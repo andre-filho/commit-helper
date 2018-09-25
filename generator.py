@@ -39,20 +39,25 @@ if file_path.is_file():
 
 else:
     print("No config files found!\nRunning default script...")
-    opt = int(raw_input("""
+    opt = int(input("""
     what type of commit convention are you using?
 
     default: Just the message
     1: Karma/Angular
     2: Conventional changelog
     3: Symfony CMF
+
     """) or 4)
 
     if opt == 1:
+        print("You're using the angular convention")
         angular_convention()
     elif opt == 2:
-       changelog_convention()
+        print("You're using the changelog convention")
+        changelog_convention()
     elif opt == 3:
+        print("You're using the symphony convention")
         symphony_convention()
     elif opt == 4:
+        print("You're not using a convention")
         just_message()
