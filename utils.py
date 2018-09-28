@@ -1,4 +1,5 @@
 import os
+from yaml import dump
 
 possible_configurations = [
     'tag',
@@ -57,3 +58,10 @@ def just_message():
 # FUTURE: implement
 def custom_convention():
     pass
+
+def create_file(convention_name):
+    data = dict(
+        convention = convention_name
+    )
+    with open('commiter.yml', 'w') as output_file:
+        dump(data, output_file, default_flow_style=False)
