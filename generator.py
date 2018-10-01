@@ -2,30 +2,24 @@ from pathlib import Path
 from yaml import safe_load
 from yaml import YAMLError
 
-from utils import run_config
-from utils import angular_convention
-from utils import changelog_convention
-from utils import symphony_convention
-from utils import just_message
+# conventions imports
+from conventions.karma_angular import angular_convention
+from conventions.changelog import changelog_convention
+from conventions.symphony_cmf import symphony_convention
+from conventions.no_convention import just_message
+
 from utils import create_file
 
-tag = ''
-tag_is_lowercase = False
-tag_is_uppercase = False
-tag_is_capitalized = False
-convention = ''
-
 file_path = Path('commiter.yml')
-
 if file_path.is_file():
     with open(str(file_path), 'r') as stream:
         try:
             config = safe_load(stream)
-            tag, tag_is_capitalized, tag_is_lowercase, tag_is_uppercase, convention = run_config(config, tag, tag_is_capitalized, tag_is_lowercase, tag_is_uppercase, convention)
-            if convention == 'angular':
+            convention = str(config['convention']).lower() if config['convention'] != None else ''
+            if convention == 'angular' or convention == 'karma':
                 print('You are using the %s convention' % convention)
                 angular_convention()
-            elif convention ==  'changelog':
+            elif convention == 'changelog':
                 print('You are using the %s convention' % convention)
                 changelog_convention()
             elif convention == 'symphony':
@@ -37,7 +31,6 @@ if file_path.is_file():
                 custom_convention()
         except YAMLError as exc:
             print(exc)
-
 else:
     print("No config files found!\nRunning default script...")
     opt = int(input("""
