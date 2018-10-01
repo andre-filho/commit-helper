@@ -20,7 +20,7 @@ Just follow the commands below:
   # make sure you have the dependencies installed in your machine and
   # have git ready to use
 
-  $ apt install python3-pip git
+  $ sudo apt install python3-pip git
 
   $ pip3 install pyyaml
 
