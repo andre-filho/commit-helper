@@ -52,8 +52,6 @@ convention: symphony  # [Tag] commit message
 convention: none      # Commit message
 ```
 
-
-
 Supported conventions available:
 <!-- list here all tags that are used in configuration file -->
 
