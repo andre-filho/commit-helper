@@ -16,13 +16,11 @@ Sometimes we, the developers, go _full-loco_ while programming and make mistakes
 Just follow the commands below:
 
 ```bash
-
   # make sure you have the dependencies installed in your machine and
   # have git ready to use
-
   $ sudo apt install python3-pip git
 
-  $ pip3 install pyyaml
+  $ pip3 install -r requirements.txt
 
   # clone the repo into your home
   $ git clone https://github.com/andre-filho/commit-helper.git ~/.commit-helper
@@ -32,7 +30,6 @@ Just follow the commands below:
 
   # reload terminal
   $ source ~/.bashrc
-
 ```
 
 ## Usage and configuration
@@ -84,3 +81,8 @@ Running default script...
 | **Name** | **Username** |
 | :--------: | :-----: |
 | André de Sousa Costa Filho | @andre-filho |
+
+## Our collaborators
+| **Name** | **Username** |
+| :------: | :----------: |
+| Arthur José Benedito de Oliveira Assis | @arthur120496 |
