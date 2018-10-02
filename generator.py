@@ -15,7 +15,12 @@ if file_path.is_file():
     with open(str(file_path), 'r') as stream:
         try:
             config = safe_load(stream)
-            convention = str(config['convention']).lower() if config['convention'] is not None else ''
+
+            if config['convention'] is not None:
+                convention = str(config['convention']).lower()
+            else:
+                convention = 'none'
+
             if convention == 'angular' or convention == 'karma':
                 print('You are using the %s convention' % convention)
                 angular_convention()
@@ -29,6 +34,7 @@ if file_path.is_file():
                 just_message()
             elif convention == 'custom':
                 custom_convention()
+
         except YAMLError as exc:
             print(exc)
 else:
