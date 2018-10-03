@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/andre-filho/commit-helper.svg?branch=master)](https://travis-ci.org/andre-filho/commit-helper)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0ef7545d395120222d77/maintainability)](https://codeclimate.com/github/andre-filho/commit-helper/maintainability)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6)](https://www.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andre-filho/commit-helper&amp;utm_campaign=Badge_Grade)
 
