@@ -15,7 +15,6 @@ from conventions.no_convention import just_message
 from utils import menu
 from utils import parser_cli
 from utils import create_file
-from utils import supported_conventions
 
 
 parser = parser_cli()

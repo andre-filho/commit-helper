@@ -51,3 +51,11 @@ def parser_cli():
                         dest="convention",
                         help="selects a convention to be used for the commit")
     return parser
+
+
+def change_if_none(string):
+    if string is None:
+        return ''
+    else:
+        return string
+
