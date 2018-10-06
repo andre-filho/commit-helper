@@ -13,8 +13,10 @@ def test_get_text_no_context():
         return inputs.pop(0)
     utils.input = mock_input
     a, b = utils.get_text()
-    assert a == 'tag'
-    assert b == 'message'
+    if not a == 'tag':
+        raise AssertionError()
+    if not b == 'message':
+        raise AssertionError()
 
 
 def test_get_text_context():
@@ -28,9 +30,12 @@ def test_get_text_context():
         return inputs.pop(0)
     utils.input = mock_input
     a, b, c = utils.get_text(context=True)
-    assert a == 'tag'
-    assert b == 'message'
-    assert c == 'context'
+    if not a == 'tag':
+        raise AssertionError()
+    if not b == 'message':
+        raise AssertionError()
+    if not c == 'context':
+        raise AssertionError()
 
 # FIXME
 # def test_create_file(tmpdir):
@@ -38,4 +43,5 @@ def test_get_text_context():
 #     utils.create_file("changelog")
 #     stream = open('commiter.yml', 'r')
 #     convention = yaml.load(stream)
-#     assert convention['convention'] == 'changelog'
+#     if not convention['convention'] == 'changelog':
+#         raise AssertionError()
