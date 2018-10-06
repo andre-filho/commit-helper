@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from pathlib import Path
 from yaml import safe_load
 from yaml import YAMLError
@@ -9,6 +11,20 @@ from conventions.symphony_cmf import symphony_convention
 from conventions.no_convention import just_message
 
 from utils import create_file
+from utils import supported_conventions as convention_list
+
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--co-author",
+                    help="make your friend an co-author to the commit",
+                    dest="co_author", default=None)
+parser.add_argument("--no-generate",
+                    help="disables the creation of a commiter.yml file",
+                    default=True, type=bool)
+parser.add_argument('--convention', choices=convention_list,
+                    help="selects a convention to be used for the commit")
+parser.parse_args()
 
 file_path = Path('commiter.yml')
 if file_path.is_file():

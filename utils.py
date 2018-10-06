@@ -1,5 +1,11 @@
 from yaml import dump
 
+supported_conventions = [
+    "angular",
+    "changelog",
+    "symphony",   
+    "message_only",
+]
 
 def get_text(context=False):
     if context:
