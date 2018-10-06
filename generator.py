@@ -17,6 +17,10 @@ from utils import parser_cli
 from utils import create_file
 
 
+# TODO:
+# - add support to --convention flag
+# - add support to --no-generate flag
+
 parser = parser_cli()
 args = parser.parse_args()
 
