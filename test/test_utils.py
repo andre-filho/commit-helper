@@ -1,4 +1,3 @@
-import pytest
 import utils
 import yaml
 

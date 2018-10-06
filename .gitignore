@@ -1,3 +1,5 @@
 .vscode/
 commiter.yml
 __pycache__/
+package.json
+package-lock.json

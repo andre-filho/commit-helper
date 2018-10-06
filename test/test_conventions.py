@@ -1,4 +1,4 @@
-import pytest
+# import pytest
 # import conventions.karma_angular as angular
 # import conventions.changelog as changelog
 # import convention.symphony_cmf as symphony
