@@ -1,6 +1,7 @@
 from os import system
 
 
-def just_message():
+def just_message(co_author=''):
     msg = str(input("commit message: "))
-    system("git commit -m '%s'" % msg.capitalize())
+    composed = """%s\n\nCo-authored-by: """ % msg.capitalize()
+    system("git commit -m '%s%s'" % (composed, co_author))

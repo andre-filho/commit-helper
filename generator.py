@@ -12,12 +12,14 @@ from conventions.symphony_cmf import symphony_convention
 from conventions.no_convention import just_message
 
 # utils imports
-from utils import create_file
 from utils import menu
 from utils import parser_cli
+from utils import create_file
+from utils import supported_conventions
 
 
 parser = parser_cli()
+args = parser.parse_args()
 
 file_path = Path('commiter.yml')
 if file_path.is_file():
@@ -30,15 +32,15 @@ if file_path.is_file():
                 convention = 'none'
             if convention == 'angular' or convention == 'karma':
                 print('You are using the %s convention' % convention)
-                angular_convention()
+                angular_convention(args.co_author)
             elif convention == 'changelog':
                 print('You are using the %s convention' % convention)
-                changelog_convention()
+                changelog_convention(args.co_author)
             elif convention == 'symphony':
                 print('You are using the %s convention' % convention)
-                symphony_convention()
+                symphony_convention(args.co_author)
             elif convention == 'none':
-                just_message()
+                just_message(args.co_author)
         except YAMLError as exc:
             print(exc)
 else:
@@ -46,17 +48,17 @@ else:
     opt = int(input(menu) or 4)
     if opt == 1:
         print("You're using the angular convention")
-        angular_convention()
+        angular_convention(parser.co_author)
         create_file('angular')
     elif opt == 2:
         print("You're using the changelog convention")
-        changelog_convention()
+        changelog_convention(args.co_author)
         create_file('changelog')
     elif opt == 3:
         print("You're using the symphony convention")
-        symphony_convention()
+        symphony_convention(args.co_author)
         create_file('symphony')
     elif opt == 4:
         print("You're not using a convention")
-        just_message()
+        just_message(args.co_author)
         create_file('none')
