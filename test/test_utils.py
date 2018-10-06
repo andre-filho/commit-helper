@@ -36,6 +36,14 @@ def test_get_text_context():
     if not c == 'context':
         raise AssertionError()
 
+def test_change_if_none():
+    string = 'asopdfha'
+    string2 = None
+    string = utils.change_if_none(string)
+    string2 = utils.change_if_none(string2)
+    if not (string == 'asopdfha' and string2 == ''):
+        raise AssertionError()
+
 # FIXME
 # def test_create_file(tmpdir):
 #     test_file = tmpdir.mkdir('test').join('commiter.yml')

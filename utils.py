@@ -56,6 +56,4 @@ def parser_cli():
 def change_if_none(string):
     if string is None:
         return ''
-    else:
-        return string
-
+    return string
