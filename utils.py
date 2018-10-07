@@ -38,6 +38,7 @@ def create_file(convention_name, dont_create=False):
         )
         with open('commiter.yml', 'w') as output_file:
             dump(data, output_file, default_flow_style=False)
+        print('Successfully created the commiter file.')
 
 
 def parser_cli():
@@ -50,10 +51,10 @@ def parser_cli():
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument("--co-author",
                         help="make your friend an co-author to the commit",
-                        dest="co_author", default=None)
+                        dest="co_author", default='')
     parser.add_argument("--no-generate", dest="no_file",
                         help="disables the creation of a commiter.yml file",
-                        default=True, type=bool)
+                        default=False, type=bool)
     parser.add_argument("--convention", choices=supported_conventions,
                         dest="convention", default='', help=help_convention)
     return parser

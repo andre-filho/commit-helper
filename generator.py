@@ -12,7 +12,6 @@ from conventions.symphony_cmf import symphony_convention
 from conventions.no_convention import just_message
 
 # utils imports
-from utils import menu
 from utils import parser_cli
 from utils import create_file
 
@@ -46,10 +45,10 @@ if file_path.is_file():
 elif args.convention is not '':
     convention = str(args.convention)
     if convention == 'angular' or convention == 'karma':
-        angular_convention(parser.co_author)
+        angular_convention(args.co_author)
         create_file(convention, args.no_file)
     elif convention == 'changelog':
-        changelog_convention(parser.co_author)
+        changelog_convention(args.co_author)
         create_file(convention, args.no_file)
     elif convention == 'symphony':
         symphony_convention(args.co_author)
