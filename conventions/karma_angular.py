@@ -3,7 +3,7 @@ from utils import get_text
 from utils import change_if_none
 
 
-def angular_convention(co_author):
+def angular_convention(co_author=''):
     tag, msg, context = get_text(context=True)
     tag = tag.lower()
     co_author = change_if_none(co_author)

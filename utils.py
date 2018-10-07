@@ -5,7 +5,7 @@ supported_conventions = [
     "angular",
     "changelog",
     "symphony",
-    "message_only",
+    "message",
 ]
 
 menu = """
@@ -31,16 +31,23 @@ def get_text(context=False):
         return tag, msg
 
 
-def create_file(convention_name):
-    data = dict(
-        convention=convention_name
-    )
-    with open('commiter.yml', 'w') as output_file:
-        dump(data, output_file, default_flow_style=False)
+def create_file(convention_name, dont_create=False):
+    if not dont_create:
+        data = dict(
+            convention=convention_name
+        )
+        with open('commiter.yml', 'w') as output_file:
+            dump(data, output_file, default_flow_style=False)
 
 
 def parser_cli():
-    parser = argparse.ArgumentParser()
+    desc = "A commit formatter tool to help you follow commit conventions."
+    help_convention = \
+        """
+        Selects a convention to be used for the commit.
+        Required if there's no commiter.yml file.
+        """
+    parser = argparse.ArgumentParser(description=desc)
     parser.add_argument("--co-author",
                         help="make your friend an co-author to the commit",
                         dest="co_author", default=None)
@@ -48,8 +55,7 @@ def parser_cli():
                         help="disables the creation of a commiter.yml file",
                         default=True, type=bool)
     parser.add_argument("--convention", choices=supported_conventions,
-                        dest="convention",
-                        help="selects a convention to be used for the commit")
+                        dest="convention", default='', help=help_convention)
     return parser
 
 

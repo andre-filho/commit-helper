@@ -17,10 +17,6 @@ from utils import parser_cli
 from utils import create_file
 
 
-# TODO:
-# - add support to --convention flag
-# - add support to --no-generate flag
-
 parser = parser_cli()
 args = parser.parse_args()
 
@@ -46,22 +42,21 @@ if file_path.is_file():
                 just_message(args.co_author)
         except YAMLError as exc:
             print(exc)
-else:
-    print("No config files found!\nRunning default script...")
-    opt = int(input(menu) or 4)
-    if opt == 1:
-        print("You're using the angular convention")
+
+elif args.convention is not '':
+    convention = str(args.convention)
+    if convention == 'angular' or convention == 'karma':
         angular_convention(parser.co_author)
-        create_file('angular')
-    elif opt == 2:
-        print("You're using the changelog convention")
-        changelog_convention(args.co_author)
-        create_file('changelog')
-    elif opt == 3:
-        print("You're using the symphony convention")
+        create_file(convention, args.no_file)
+    elif convention == 'changelog':
+        changelog_convention(parser.co_author)
+        create_file(convention, args.no_file)
+    elif convention == 'symphony':
         symphony_convention(args.co_author)
-        create_file('symphony')
-    elif opt == 4:
-        print("You're not using a convention")
-        just_message(args.co_author)
-        create_file('none')
+        create_file(convention, args.no_file)
+    elif convention == 'message':
+        just_message(convention)
+        create_file('none', args.no_file)
+
+else:
+    parser.print_help()

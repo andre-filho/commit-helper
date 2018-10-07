@@ -36,6 +36,7 @@ def test_get_text_context():
     if not c == 'context':
         raise AssertionError()
 
+
 def test_change_if_none():
     string = 'asopdfha'
     string2 = None

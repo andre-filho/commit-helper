@@ -3,7 +3,7 @@ from utils import get_text
 from utils import change_if_none
 
 
-def changelog_convention(co_author):
+def changelog_convention(co_author=''):
     tag, msg = get_text()
     tag = tag.upper()
     co_author = change_if_none(co_author)

@@ -3,7 +3,7 @@ from utils import get_text
 from utils import change_if_none
 
 
-def symphony_convention(co_author):
+def symphony_convention(co_author=''):
     tag, msg = get_text()
     tag = tag.capitalize()
     co_author = change_if_none(co_author)
