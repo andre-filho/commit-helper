@@ -20,10 +20,10 @@ Just follow the commands below:
   # have git ready to use
   $ sudo apt install python3-pip git
 
-  $ pip3 install -r requirements.txt
-
   # clone the repo into your home
   $ git clone https://github.com/andre-filho/commit-helper.git ~/.commit-helper
+
+  $ pip3 install -r ~/.commit-helper/requirements.txt
 
   # create a function in your .bashrc
   $ echo "commit(){ python3 ~/.commit-helper/generator.py; }" >> ~/.bashrc
@@ -34,7 +34,41 @@ Just follow the commands below:
 
 ## Usage and configuration
 
-For this project to work smoothly, you must have in your working directory a file named **commiter.yml**. In this file you must pass the commit convention that you want to use, following the example:
+This program has a cli that you can take advantage of. Running `commit --help`
+will show you the usage and options for your commit. All of them are optional
+for the sake of not losing your precious time.
+
+```bash
+  $ commit -h
+  usage: generator.py [-h] [--co-author CO_AUTHOR] [--no-generate NO_FILE]
+                    [--convention {angular,changelog,symphony,message}]
+
+  A commit formatter tool to help you follow commit conventions.
+
+  optional arguments:
+    -h, --help            show this help message and exit
+    --co-author CO_AUTHOR
+                          make your friend an co-author to the commit
+    --no-generate NO_FILE
+                          disables the creation of a commiter.yml file
+    --convention {angular,changelog,symphony,message}
+                          Selects a convention to be used for the commit.
+                          Required if there is no commiter.yml file.
+```
+
+So, if you want to write a co-authored commit, you should use:
+
+```bash
+$ commit --co-author "foo bar doritous <foobar@douritos.com>"
+```
+
+Or if you are using this for the first time in your project:
+
+```bash
+$ commit --convention changelog
+```
+
+To work even more smoothly, have in your working directory a file named **commiter.yml**. In this file you must pass the commit convention that you want to use, following the example:
 
 ```yaml
 convention: angular   # tag(context): commit message
@@ -53,26 +87,10 @@ convention: none      # Commit message
 ```
 
 Supported conventions available:
-<!-- list here all tags that are used in configuration file -->
 
  - angular/karma
  - changelog
  - symphony
-
-In the event of no commiter.yml file presence, you will be prompted with the following option menu:
-
-```bash
-No config files found!
-Running default script...
-    what type of commit convention are you using?
-
-    (default): No convention
-    1: Karma/Angular
-    2: Conventional changelog
-    3: Symfony CMF
-
-```
-
 
 
 ## Project's maintainers
@@ -84,3 +102,4 @@ Running default script...
 | **Name** | **Username** |
 | :------: | :----------: |
 | Arthur José Benedito de Oliveira Assis | @arthur120496 |
+
