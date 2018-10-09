@@ -1,5 +1,5 @@
 import utils
-import yaml
+# import yaml
 
 
 def test_get_text_no_context():
