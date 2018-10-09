@@ -26,7 +26,7 @@ Just follow the commands below:
   $ pip3 install -r ~/.commit-helper/requirements.txt
 
   # create a function in your .bashrc
-  $ echo "commit(){ python3 ~/.commit-helper/generator.py; }" >> ~/.bashrc
+  $ echo "alias commit='python3 ~/.commit-helper/generator.py'" >> ~/.bashrc
 
   # reload terminal
   $ source ~/.bashrc
@@ -102,4 +102,3 @@ Supported conventions available:
 | **Name** | **Username** |
 | :------: | :----------: |
 | Arthur José Benedito de Oliveira Assis | @arthur120496 |
-
