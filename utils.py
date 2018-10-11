@@ -50,13 +50,15 @@ def parser_cli():
         """
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument("--co-author",
-                        help="make your friend an co-author to the commit",
+                        help="Make your friend an co-author to the commit",
                         dest="co_author", default='')
-    parser.add_argument("--no-generate", dest="no_file",
-                        help="disables the creation of a commiter.yml file",
-                        default=False, type=bool)
+    parser.add_argument("--no-file", dest="no_file",
+                        help="Disables the creation of a commiter.yml file",
+                        action="store_true")
     parser.add_argument("--convention", choices=supported_conventions,
                         dest="convention", default='', help=help_convention)
+    parser.add_argument('--debug', action="store_true", dest="debug",
+                        help="Toggles debug option")
     return parser
 
 
@@ -68,6 +70,4 @@ def change_if_none(string):
 
 def debug(message, value, show=False):
     if show:
-        print("\n-------DEBUG--------")
-        print("%s: %s" % (message, value))
-        print("--------END---------\n")
+        print("DEBUG-> %s: %s" % (message, value))
