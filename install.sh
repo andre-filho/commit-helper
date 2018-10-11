@@ -19,4 +19,4 @@ pip3 install --user ~/.commit-helper/requirements.txt;
 
 chmod +x $HOME/.commit-helper/generator.py;
 
-echo "commit(){ ./$HOME/.commit-helper/generator.py; }" >> $HOME/.bashrc;
+echo "alias commit='./$HOME/.commit-helper/generator.py' >> $HOME/.bashrc;
