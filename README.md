@@ -16,6 +16,12 @@ Sometimes we, the developers, go _full-loco_ while programming and make mistakes
 Just follow the commands below:
 
 ```bash
+  $ chmod +x $HOME/.commit-helper/install.sh
+  
+  $ ./$HOME/.commit-helper/install.sh
+    
+  # or you could type the commands below
+  
   # make sure you have the dependencies installed in your machine and
   # have git ready to use
   $ sudo apt install python3-pip git
