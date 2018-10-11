@@ -64,3 +64,10 @@ def change_if_none(string):
     if string is None:
         return ''
     return string
+
+
+def debug(message, value, show=False):
+    if show:
+        print("\n-------DEBUG--------")
+        print("%s: %s" % (message, value))
+        print("--------END---------\n")
