@@ -64,8 +64,7 @@ def main(debug_mode=False):
         parser.print_help()
 
 
-debug_option = False
 parser = parser_cli()
 args = parser.parse_args()
-debug('args variable', args, debug_option)
-main(debug_option)
+debug('args variable', args, args.debug)
+main(args.debug)
