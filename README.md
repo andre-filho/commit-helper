@@ -1,10 +1,20 @@
-<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/200-200.png" style="align: center">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/200-200.png" style="align: center">
+  <h1 align="center">Commit Helper</h3>
+</p>
 
-# Commit Helper
-
-[![Build Status](https://travis-ci.org/andre-filho/commit-helper.svg?branch=master)](https://travis-ci.org/andre-filho/commit-helper)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0ef7545d395120222d77/maintainability)](https://codeclimate.com/github/andre-filho/commit-helper/maintainability)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6)](https://www.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andre-filho/commit-helper&amp;utm_campaign=Badge_Grade)
+<p align="center">
+  <a href="https://travis-ci.org/andre-filho/commit-helper">
+    <img src="https://travis-ci.org/andre-filho/commit-helper.svg?branch=master" alt="Build Status">
+  </a>
+  <a href="https://codeclimate.com/github/andre-filho/commit-helper/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/0ef7545d395120222d77/maintainability" alt="Maintainability">
+  </a>
+  
+  <a href="https://www.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andre-filho/commit-helper&amp;utm_campaign=Badge_Grade">
+    <img src="https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6" alt="Codacy Badge">
+  </a>
+</p>
 
 ## What does it do?
 The commit-helper do exactly what it's name suggest: helps you create and maintain your commit policy by tailoring your commit message into a commit convention.
