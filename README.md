@@ -10,7 +10,7 @@
   <a href="https://codeclimate.com/github/andre-filho/commit-helper/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/0ef7545d395120222d77/maintainability" alt="Maintainability">
   </a>
-  
+
   <a href="https://www.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andre-filho/commit-helper&amp;utm_campaign=Badge_Grade">
     <img src="https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6" alt="Codacy Badge">
   </a>
@@ -30,11 +30,11 @@ Just follow the commands below:
 
 ```bash
   $ chmod +x $HOME/.commit-helper/install.sh
-  
+
   $ ./$HOME/.commit-helper/install.sh
-    
+
   # or you could type the commands below
-  
+
   # make sure you have the dependencies installed in your machine and
   # have git ready to use
   $ sudo apt install python3-pip git
@@ -121,3 +121,4 @@ Supported conventions available:
 | **Name** | **Username** |
 | :------: | :----------: |
 | Arthur José Benedito de Oliveira Assis | @arthur120496 |
+| Matheus Richard T. Gomes | @MatheusRich |
