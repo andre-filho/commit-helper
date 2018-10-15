@@ -10,7 +10,7 @@
   <a href="https://codeclimate.com/github/andre-filho/commit-helper/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/0ef7545d395120222d77/maintainability" alt="Maintainability">
   </a>
-
+  <a href="https://codebeat.co/projects/github-com-andre-filho-commit-helper-master"><img alt="codebeat badge" src="https://codebeat.co/badges/7621c6dc-7143-4efa-af3e-45508210d276" /></a>
   <a href="https://www.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andre-filho/commit-helper&amp;utm_campaign=Badge_Grade">
     <img src="https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6" alt="Codacy Badge">
   </a>
