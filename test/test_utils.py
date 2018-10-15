@@ -37,12 +37,22 @@ def test_get_text_context():
         raise AssertionError()
 
 
-def test_change_if_none():
+def test_sanitize_as_empty_string():
     string = 'asopdfha'
     string2 = None
-    string = utils.change_if_none(string)
-    string2 = utils.change_if_none(string2)
+    string = utils.sanitize_as_empty_string(string)
+    string2 = utils.sanitize_as_empty_string(string2)
     if not (string == 'asopdfha' and string2 == ''):
+        raise AssertionError()
+
+
+def test_gen_co_author():
+    arg = utils.gen_co_author('kiryto <black.swordsman@aincrad.com>')
+    if not arg == "Co-authored-by: kiryto <black.swordsman@aincrad.com>":
+        raise AssertionError()
+
+    arg2 = utils.gen_co_author('')
+    if not arg2 == '':
         raise AssertionError()
 
 # FIXME
