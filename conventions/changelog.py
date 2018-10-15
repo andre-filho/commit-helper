@@ -1,11 +1,12 @@
 from os import system
 from utils import get_text
-from utils import change_if_none
+from utils import sanitize_as_empty_string
+from utils import gen_co_author
 
 
-def changelog_convention(co_author=''):
+def changelog_convention(co_author):
     tag, msg = get_text()
     tag = tag.upper()
-    co_author = change_if_none(co_author)
-    composed_message = """%s: %s\n\nCo-authored-by: """ % (tag, msg)
-    system("git commit -m '%s%s'" % (composed_message, co_author))
+    composed_message = "%s: %s\n" % (tag, msg)
+    composed_message += gen_co_author(co_author)
+    system("git commit -m '%s'" % composed_message)

@@ -3,6 +3,7 @@ from yaml import dump
 
 supported_conventions = [
     "angular",
+    "karma",
     "changelog",
     "symphony",
     "message",
@@ -23,12 +24,18 @@ def get_text(context=False):
     if context:
         tag = str(input("type the tag: "))
         msg = str(input("type the commit message: ")).lower()
-        context = str(input('type the context: ')).lower()
+        context = str(input('type the context: ') or '').lower()
         return tag, msg, context
     else:
         tag = str(input("type the tag: "))
         msg = str(input("type the commit message: ")).lower()
         return tag, msg
+
+
+def gen_co_author(co_author):
+    if co_author is '':
+        return ''
+    return "Co-authored-by: %s" % co_author
 
 
 def create_file(convention_name, dont_create=False):
@@ -62,7 +69,7 @@ def parser_cli():
     return parser
 
 
-def change_if_none(string):
+def sanitize_as_empty_string(string):
     if string is None:
         return ''
     return string
