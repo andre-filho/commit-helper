@@ -42,7 +42,7 @@ def main(debug_mode=False):
                     commit_message = changelog_convention(tag,msg)
                 elif convention == 'symphony':
                     print('You are using the %s convention' % convention)
-                    symphony_convention(args.co_author)
+                    commit_message = symphony_convention(tag,msg)
                 elif convention == 'none':
                     just_message(args.co_author)
                 
@@ -60,13 +60,13 @@ def main(debug_mode=False):
         tag, msg = get_text()
         if convention == 'angular' or convention == 'karma':
             context = get_context()
-            angular_convention(tag,msg,context)
+            commit_message = angular_convention(tag,msg,context)
             create_file(convention, args.no_file)
         elif convention == 'changelog':
             commit_message = changelog_convention(tag,msg)
             create_file(convention, args.no_file)
         elif convention == 'symphony':
-            symphony_convention(args.co_author)
+            commit_message = symphony_convention(tag,msg)
             create_file(convention, args.no_file)
         elif convention == 'message':
             just_message(convention)
