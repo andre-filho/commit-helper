@@ -2,7 +2,8 @@ import utils
 # import yaml
 
 
-def test_get_text_no_context():
+
+def test_get_text():
     inputs = [
         "tag",
         "message",
@@ -18,24 +19,17 @@ def test_get_text_no_context():
         raise AssertionError()
 
 
-def test_get_text_context():
+def test_get_context():
     inputs = [
-        "tag",
-        "message",
         "context",
     ]
 
     def mock_input(s):
         return inputs.pop(0)
     utils.input = mock_input
-    a, b, c = utils.get_text(context=True)
-    if not a == 'tag':
+    a = utils.get_context()
+    if not a == 'context':
         raise AssertionError()
-    if not b == 'message':
-        raise AssertionError()
-    if not c == 'context':
-        raise AssertionError()
-
 
 def test_sanitize_as_empty_string():
     string = 'asopdfha'

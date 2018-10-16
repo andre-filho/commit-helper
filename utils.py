@@ -20,16 +20,15 @@ menu = """
     """
 
 
-def get_text(context=False):
-    if context:
-        tag = str(input("type the tag: "))
-        msg = str(input("type the commit message: ")).lower()
+def get_text():
+    tag = str(input("type the tag: "))
+    msg = str(input("type the commit message: ")).lower()
+    return tag, msg
+
+
+def get_context():
         context = str(input('type the context: ') or '').lower()
-        return tag, msg, context
-    else:
-        tag = str(input("type the tag: "))
-        msg = str(input("type the commit message: ")).lower()
-        return tag, msg
+        return context
 
 
 def gen_co_author(co_author):
