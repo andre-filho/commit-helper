@@ -1,6 +1,5 @@
 from os import system
 
-
 def angular_convention(tag,msg,context):
     tag = tag.lower()
     if context is '':

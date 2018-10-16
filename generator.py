@@ -39,7 +39,7 @@ def main(debug_mode=False):
                     commit_message = angular_convention(tag,msg,context)
                 elif convention == 'changelog':
                     print('You are using the %s convention' % convention)
-                    changelog_convention(args.co_author)
+                    commit_message = changelog_convention(tag,msg)
                 elif convention == 'symphony':
                     print('You are using the %s convention' % convention)
                     symphony_convention(args.co_author)
@@ -63,7 +63,7 @@ def main(debug_mode=False):
             angular_convention(tag,msg,context)
             create_file(convention, args.no_file)
         elif convention == 'changelog':
-            changelog_convention(args.co_author)
+            commit_message = changelog_convention(tag,msg)
             create_file(convention, args.no_file)
         elif convention == 'symphony':
             symphony_convention(args.co_author)
