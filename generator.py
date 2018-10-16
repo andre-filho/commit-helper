@@ -15,6 +15,9 @@ from conventions.no_convention import just_message
 from utils import parser_cli
 from utils import create_file
 from utils import debug
+from utils import get_text
+from utils import get_context
+from utils import gen_co_author
 
 
 def main(debug_mode=False):
@@ -29,9 +32,11 @@ def main(debug_mode=False):
                     convention = str(config['convention']).lower()
                 else:
                     convention = 'none'
+                tag, msg = get_text()
                 if convention == 'angular' or convention == 'karma':
                     print('You are using the %s convention' % convention)
-                    angular_convention(args.co_author)
+                    context = get_context()
+                    commit_message = angular_convention(tag,msg,context)
                 elif convention == 'changelog':
                     print('You are using the %s convention' % convention)
                     changelog_convention(args.co_author)
@@ -40,14 +45,22 @@ def main(debug_mode=False):
                     symphony_convention(args.co_author)
                 elif convention == 'none':
                     just_message(args.co_author)
+                
+                commit_message += gen_co_author(args.co_author)
+                debug('commit message', commit_message, debug_mode)
+                system('git commit -m "%s"' % commit_message)
+
             except YAMLError as exc:
                 print(exc)
 
     elif args.convention is not '':
         convention = str(args.convention)
         debug('convention flag', convention, debug_mode)
+
+        tag, msg = get_text()
         if convention == 'angular' or convention == 'karma':
-            angular_convention(args.co_author)
+            context = get_context()
+            angular_convention(tag,msg,context)
             create_file(convention, args.no_file)
         elif convention == 'changelog':
             changelog_convention(args.co_author)
@@ -58,6 +71,10 @@ def main(debug_mode=False):
         elif convention == 'message':
             just_message(convention)
             create_file('none', args.no_file)
+        
+        commit_message += gen_co_author(args.co_author)
+        debug('commit message', commit_message, debug_mode)
+        system('git commit -m "%s"' % commit_message)
 
     else:
         debug('parser full return', parser.parse_args(), debug_mode)
