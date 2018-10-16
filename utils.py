@@ -25,9 +25,11 @@ def get_text():
     msg = str(input("type the commit message: ")).lower()
     return tag, msg
 
+
 def get_context():
         context = str(input('type the context: ') or '').lower()
         return context
+
 
 def gen_co_author(co_author):
     if co_author is '':
