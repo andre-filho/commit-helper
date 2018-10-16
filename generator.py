@@ -4,6 +4,7 @@
 from pathlib import Path
 from yaml import safe_load
 from yaml import YAMLError
+from os import system
 
 # conventions imports
 from conventions.karma_angular import angular_convention
@@ -32,19 +33,22 @@ def main(debug_mode=False):
                     convention = str(config['convention']).lower()
                 else:
                     convention = 'none'
-                tag, msg = get_text()
-                if convention == 'angular' or convention == 'karma':
-                    print('You are using the %s convention' % convention)
-                    context = get_context()
-                    commit_message = angular_convention(tag,msg,context)
-                elif convention == 'changelog':
-                    print('You are using the %s convention' % convention)
-                    commit_message = changelog_convention(tag,msg)
-                elif convention == 'symphony':
-                    print('You are using the %s convention' % convention)
-                    commit_message = symphony_convention(tag,msg)
-                elif convention == 'none':
-                    just_message(args.co_author)
+
+                if convention == 'none':
+                    commit_message = just_message()
+                
+                else:
+                    tag, msg = get_text()
+                    if convention == 'angular' or convention == 'karma':
+                        print('You are using the %s convention' % convention)
+                        context = get_context()
+                        commit_message = angular_convention(tag,msg,context)
+                    elif convention == 'changelog':
+                        print('You are using the %s convention' % convention)
+                        commit_message = changelog_convention(tag,msg)
+                    elif convention == 'symphony':
+                        print('You are using the %s convention' % convention)
+                        commit_message = symphony_convention(tag,msg)
                 
                 commit_message += gen_co_author(args.co_author)
                 debug('commit message', commit_message, debug_mode)
@@ -57,20 +61,25 @@ def main(debug_mode=False):
         convention = str(args.convention)
         debug('convention flag', convention, debug_mode)
 
-        tag, msg = get_text()
-        if convention == 'angular' or convention == 'karma':
-            context = get_context()
-            commit_message = angular_convention(tag,msg,context)
-            create_file(convention, args.no_file)
-        elif convention == 'changelog':
-            commit_message = changelog_convention(tag,msg)
-            create_file(convention, args.no_file)
-        elif convention == 'symphony':
-            commit_message = symphony_convention(tag,msg)
-            create_file(convention, args.no_file)
-        elif convention == 'message':
-            just_message(convention)
+        
+        if convention == 'message':
+            commit_message = just_message()
             create_file('none', args.no_file)
+        
+        else:
+            tag, msg = get_text()
+            
+            if convention == 'angular' or convention == 'karma':
+                context = get_context()
+                commit_message = angular_convention(tag,msg,context)
+                create_file(convention, args.no_file)
+            elif convention == 'changelog':
+                commit_message = changelog_convention(tag,msg)
+                create_file(convention, args.no_file)
+            elif convention == 'symphony':
+                commit_message = symphony_convention(tag,msg)
+                create_file(convention, args.no_file)
+
         
         commit_message += gen_co_author(args.co_author)
         debug('commit message', commit_message, debug_mode)
