@@ -42,7 +42,7 @@ def test_sanitize_as_empty_string():
 
 def test_gen_co_author():
     arg = utils.gen_co_author('kiryto <black.swordsman@aincrad.com>')
-    if not arg == "Co-authored-by: kiryto <black.swordsman@aincrad.com>":
+    if not arg == "\nCo-authored-by: kiryto <black.swordsman@aincrad.com>":
         raise AssertionError()
 
     arg2 = utils.gen_co_author('')
