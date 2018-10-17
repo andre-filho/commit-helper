@@ -121,4 +121,4 @@ Supported conventions available:
 | **Name** | **Username** |
 | :------: | :----------: |
 | Arthur José Benedito de Oliveira Assis | @arthur0496 |
-| Matheus Richard T. Gomes | @MatheusRich |
+| Matheus Richard Torres Gomes de Melo | @MatheusRich |
