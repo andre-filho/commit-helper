@@ -120,5 +120,5 @@ Supported conventions available:
 ## Our collaborators
 | **Name** | **Username** |
 | :------: | :----------: |
-| Arthur José Benedito de Oliveira Assis | @arthur120496 |
+| Arthur José Benedito de Oliveira Assis | @arthur0496 |
 | Matheus Richard T. Gomes | @MatheusRich |
