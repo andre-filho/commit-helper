@@ -1,6 +1,6 @@
 import pytest
 import conventions.karma_angular as angular
-# import conventions.changelog as changelog
+import conventions.changelog as changelog
 # import convention.symphony_cmf as symphony
 # import conventions.no_convention as no_convention
 
@@ -20,7 +20,10 @@ def test_angular_convention_without_context():
 
 
 def test_changelog_convention():
-    pass
+    message = changelog.changelog_convention('tag','message')
+
+    if not ('TAG: message\n'):
+      raise AssertionError()
 
 
 def test_symphony_convention():
