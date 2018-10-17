@@ -2,7 +2,6 @@ import utils
 # import yaml
 
 
-
 def test_get_text():
     inputs = [
         "tag",
@@ -30,6 +29,7 @@ def test_get_context():
     a = utils.get_context()
     if not a == 'context':
         raise AssertionError()
+
 
 def test_sanitize_as_empty_string():
     string = 'asopdfha'
