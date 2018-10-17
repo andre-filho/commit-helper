@@ -34,7 +34,7 @@ def get_context():
 def gen_co_author(co_author):
     if co_author is '':
         return ''
-    return "Co-authored-by: %s" % co_author
+    return "\nCo-authored-by: %s" % co_author
 
 
 def create_file(convention_name, dont_create=False):
