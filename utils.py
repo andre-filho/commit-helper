@@ -55,15 +55,15 @@ def parser_cli():
         Required if there's no commiter.yml file.
         """
     parser = argparse.ArgumentParser(description=desc)
-    parser.add_argument("--co-author",
+    parser.add_argument("-ca", "--co-author",
                         help="Make your friend an co-author to the commit",
                         dest="co_author", default='')
-    parser.add_argument("--no-file", dest="no_file",
+    parser.add_argument("-nf", "--no-file", dest="no_file",
                         help="Disables the creation of a commiter.yml file",
                         action="store_true")
-    parser.add_argument("--convention", choices=supported_conventions,
+    parser.add_argument("-c", "--convention", choices=supported_conventions,
                         dest="convention", default='', help=help_convention)
-    parser.add_argument('--debug', action="store_true", dest="debug",
+    parser.add_argument("-d", "--debug", action="store_true", dest="debug",
                         help="Toggles debug option")
     return parser
 
