@@ -9,7 +9,7 @@ script:
   - pytest test/ -v
   - pycodestyle *.py
 after_script:
-  - py.test --cov-report term --cov=.
+  - py.test --cov-report term --cov=. --ignore=test/* --cov-report=html
   - codeclimate-test-reporter
   - coverage xml
   - python-codacy-coverage -r coverage.xml
