@@ -10,6 +10,7 @@ def test_get_text():
 
     def mock_input(s):
         return inputs.pop(0)
+
     utils.input = mock_input
     a, b = utils.get_text()
     if not a == 'tag':
