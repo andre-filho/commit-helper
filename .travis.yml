@@ -8,5 +8,10 @@ install:
 script:
   - pytest test/ -v
   - pycodestyle *.py
+after_script:
+  - py.test --cov-report term --cov=.
+  - codeclimate-test-reporter
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
 notification:
   email: false
