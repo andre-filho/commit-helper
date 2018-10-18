@@ -13,7 +13,7 @@ script:
   - pytest test/ -v
   - pycodestyle *.py
 after_script:
-  - coverage run py.test --cov=.
+  - py.test --cov-report term --cov=.
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notification:
   email: false
