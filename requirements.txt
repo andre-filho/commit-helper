@@ -5,3 +5,4 @@ argparse==1.4.0
 coverage==4.3
 pytest-cov==2.0.0
 codeclimate-test-reporter
+codacy-coverage==1.3

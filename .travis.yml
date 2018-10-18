@@ -11,5 +11,7 @@ script:
 after_script:
   - py.test --cov-report term --cov=.
   - codeclimate-test-reporter
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
 notification:
   email: false
