@@ -5,15 +5,11 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 script:
   - pytest test/ -v
   - pycodestyle *.py
 after_script:
   - py.test --cov-report term --cov=.
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - codeclimate-test-reporter
 notification:
   email: false
