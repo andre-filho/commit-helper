@@ -14,6 +14,8 @@
   <a href="https://www.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andre-filho/commit-helper&amp;utm_campaign=Badge_Grade">
     <img src="https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6" alt="Codacy Badge">
   </a>
+  <a href="https://codeclimate.com/github/andre-filho/commit-helper/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0ef7545d395120222d77/test_coverage" /></a>
+  
 </p>
 
 ## What does it do?
