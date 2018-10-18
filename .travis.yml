@@ -3,16 +3,12 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-jobs:
-  install:
-    - pip install -r requirements.txt
-  include:
-    - stage: test
-      script:
-        # - pytest test/ -v
-        - coverage run py.test test/
-    - stage: lint
-      script:
-        - pycodestyle *.py
+install:
+  - pip install -r requirements.txt
+script:
+  - pytest test/ -v
+  - pycodestyle *.py
+after_script:
+  - py.test --cov=.
 notification:
   email: false
