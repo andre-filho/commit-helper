@@ -35,19 +35,18 @@ def main(debug_mode=False):
                     convention = 'none'
 
                 if convention == 'none':
+                    print('You are not using a convention')
                     commit_message = just_message()
 
                 else:
+                    print('You are using the %s convention' % convention)
                     tag, msg = get_text()
                     if convention == 'angular' or convention == 'karma':
-                        print('You are using the %s convention' % convention)
                         context = get_context()
                         commit_message = angular_convention(tag, msg, context)
                     elif convention == 'changelog':
-                        print('You are using the %s convention' % convention)
                         commit_message = changelog_convention(tag, msg)
                     elif convention == 'symphony':
-                        print('You are using the %s convention' % convention)
                         commit_message = symphony_convention(tag, msg)
 
                 commit_message += gen_co_author(args.co_author)
@@ -88,7 +87,8 @@ def main(debug_mode=False):
         parser.print_help()
 
 
-parser = parser_cli()
-args = parser.parse_args()
-debug('args variable', args, args.debug)
-main(args.debug)
+if __name__ == '__main__':
+    parser = parser_cli()
+    args = parser.parse_args()
+    debug('args variable', args, args.debug)
+    main(args.debug)
