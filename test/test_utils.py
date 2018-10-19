@@ -34,10 +34,13 @@ def test_get_context():
 
 def test_sanitize_as_empty_string():
     string = 'asopdfha'
-    string2 = None
     string = utils.sanitize_as_empty_string(string)
+    if not string == 'asopdfha':
+        raise AssertionError()
+    
+    string2 = None
     string2 = utils.sanitize_as_empty_string(string2)
-    if not (string == 'asopdfha' and string2 == ''):
+    if not string2 == '':
         raise AssertionError()
 
 
