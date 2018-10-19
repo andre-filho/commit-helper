@@ -34,10 +34,13 @@ def test_get_context():
 
 def test_sanitize_as_empty_string():
     string = 'asopdfha'
-    string2 = None
     string = utils.sanitize_as_empty_string(string)
+    if not string == 'asopdfha':
+        raise AssertionError()
+    
+    string2 = None
     string2 = utils.sanitize_as_empty_string(string2)
-    if not (string == 'asopdfha' and string2 == ''):
+    if not string2 == '':
         raise AssertionError()
 
 
@@ -48,6 +51,13 @@ def test_gen_co_author():
 
     arg2 = utils.gen_co_author('')
     if not arg2 == '':
+        raise AssertionError()
+
+
+def test_debug(capsys):
+    utils.debug('msg', 666, show=True)
+    captured = capsys.readouterr()
+    if not captured.out == "DEBUG-> msg: 666\n":
         raise AssertionError()
 
 # FIXME

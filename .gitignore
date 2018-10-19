@@ -6,3 +6,4 @@ package-lock.json
 htmlcov/
 .coverage
 .pytest_cache/
+venv/
