@@ -37,7 +37,7 @@ def gen_co_author(co_author):
     return "\nCo-authored-by: %s" % co_author
 
 
-def create_file(convention_name, dont_create=False):
+def create_file(convention_name, dont_create=False): # pragma: no cover
     if not dont_create:
         data = dict(
             convention=convention_name

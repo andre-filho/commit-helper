@@ -50,6 +50,13 @@ def test_gen_co_author():
     if not arg2 == '':
         raise AssertionError()
 
+
+def test_debug(capsys):
+    utils.debug('msg', 666, show=True)
+    captured = capsys.readouterr()
+    if not captured.out == "DEBUG-> msg: 666\n":
+        raise AssertionError()
+
 # FIXME
 # def test_create_file(tmpdir):
 #     test_file = tmpdir.mkdir('test').join('commiter.yml')
