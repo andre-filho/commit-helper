@@ -19,7 +19,11 @@ from .utils.utils import get_context
 from .utils.utils import gen_co_author
 
 
-def main(debug_mode=False):
+def main():
+    parser = parser_cli()
+    args = parser.parse_args()
+    debug_mode = args.debug
+    debug('args variable', args, debug_mode)
     file_path = Path('commiter.yml')
     debug('file_path', file_path, debug_mode)
     if file_path.is_file():
@@ -85,7 +89,5 @@ def main(debug_mode=False):
         parser.print_help()
 
 
-parser = parser_cli()
-args = parser.parse_args()
-debug('args variable', args, args.debug)
-main(args.debug)
+#
+# main(args.debug)

@@ -6,7 +6,7 @@ setup(  # pragma: no cover
     packages=['commit_helper'],
     entry_points={
         'console_scripts': [
-            'commit = commit_helper.__main__'
+            'commit = commit_helper.__main__:main'
         ]
     },
     install_requires=[
