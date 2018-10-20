@@ -7,3 +7,4 @@ htmlcov/
 .coverage
 .pytest_cache/
 venv/
+*.egg-info/
