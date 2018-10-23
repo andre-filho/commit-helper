@@ -1,4 +1,4 @@
-import utils
+import commit_helper.utils.utils as utils
 # import yaml
 
 
@@ -37,7 +37,7 @@ def test_sanitize_as_empty_string():
     string = utils.sanitize_as_empty_string(string)
     if not string == 'asopdfha':
         raise AssertionError()
-    
+
     string2 = None
     string2 = utils.sanitize_as_empty_string(string2)
     if not string2 == '':

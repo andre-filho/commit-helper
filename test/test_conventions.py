@@ -1,7 +1,7 @@
-import conventions.karma_angular as angular
-import conventions.changelog as changelog
-import conventions.symphony_cmf as symphony
-import conventions.no_convention as no_convention
+import commit_helper.conventions.karma_angular as angular
+import commit_helper.conventions.changelog as changelog
+import commit_helper.conventions.symphony_cmf as symphony
+import commit_helper.conventions.no_convention as no_convention
 
 
 def test_angular_convention_with_context():

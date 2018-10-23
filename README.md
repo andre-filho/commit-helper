@@ -15,7 +15,7 @@
     <img src="https://api.codacy.com/project/badge/Grade/595af9a088cf44e19ec2679a8c2617f6" alt="Codacy Badge">
   </a>
   <a href="https://codeclimate.com/github/andre-filho/commit-helper/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0ef7545d395120222d77/test_coverage" /></a>
-  
+
 </p>
 
 ## What does it do?
@@ -28,29 +28,10 @@ Sometimes we, the developers, go _full-loco_ while programming and make mistakes
 
 ## Installation
 
-Just follow the commands below:
+In order to install one of our older versions, check our [previous releases](PREVIOUS_VERSIONS). To install the latest (pip) version, just follow the commands below:
 
 ```bash
-  $ chmod +x $HOME/.commit-helper/install.sh
-
-  $ ./$HOME/.commit-helper/install.sh
-
-  # or you could type the commands below
-
-  # make sure you have the dependencies installed in your machine and
-  # have git ready to use
-  $ sudo apt install python3-pip git
-
-  # clone the repo into your home
-  $ git clone https://github.com/andre-filho/commit-helper.git ~/.commit-helper
-
-  $ pip3 install -r ~/.commit-helper/requirements.txt
-
-  # create a function in your .bashrc
-  $ echo "alias commit='python3 ~/.commit-helper/generator.py'" >> ~/.bashrc
-
-  # reload terminal
-  $ source ~/.bashrc
+$ pip3 install commit-helper  
 ```
 
 ## Usage and configuration
@@ -68,11 +49,11 @@ for the sake of not losing your precious time.
 
   optional arguments:
     -h, --help            show this help message and exit
-    --co-author CO_AUTHOR
+    -ca, --co-author CO_AUTHOR
                           make your friend an co-author to the commit
-    --no-generate NO_FILE
+    -nf, --no-file
                           disables the creation of a commiter.yml file
-    --convention {angular,changelog,symphony,message}
+    -c, --convention {angular,changelog,symphony,message}
                           Selects a convention to be used for the commit.
                           Required if there is no commiter.yml file.
 ```
@@ -93,6 +74,10 @@ To work even more smoothly, have in your working directory a file named **commit
 
 ```yaml
 convention: angular   # tag(context): commit message
+
+# or
+
+convention: karma   # tag(context): commit message
 
 # or
 

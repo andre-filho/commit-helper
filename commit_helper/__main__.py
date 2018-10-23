@@ -1,5 +1,3 @@
-#! /usr/bin/env python3
-
 # dependencies imports
 from pathlib import Path
 from yaml import safe_load
@@ -7,21 +5,25 @@ from yaml import YAMLError
 from os import system
 
 # conventions imports
-from conventions.karma_angular import angular_convention
-from conventions.changelog import changelog_convention
-from conventions.symphony_cmf import symphony_convention
-from conventions.no_convention import just_message
+from .conventions.karma_angular import angular_convention
+from .conventions.changelog import changelog_convention
+from .conventions.symphony_cmf import symphony_convention
+from .conventions.no_convention import just_message
 
 # utils imports
-from utils import parser_cli
-from utils import create_file
-from utils import debug
-from utils import get_text
-from utils import get_context
-from utils import gen_co_author
+from .utils.utils import parser_cli
+from .utils.utils import create_file
+from .utils.utils import debug
+from .utils.utils import get_text
+from .utils.utils import get_context
+from .utils.utils import gen_co_author
 
 
-def main(debug_mode=False):
+def main():
+    parser = parser_cli()
+    args = parser.parse_args()
+    debug_mode = args.debug
+    debug('args variable', args, debug_mode)
     file_path = Path('commiter.yml')
     debug('file_path', file_path, debug_mode)
     if file_path.is_file():
@@ -87,8 +89,5 @@ def main(debug_mode=False):
         parser.print_help()
 
 
-if __name__ == '__main__':
-    parser = parser_cli()
-    args = parser.parse_args()
-    debug('args variable', args, args.debug)
-    main(args.debug)
+#
+# main(args.debug)
