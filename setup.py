@@ -1,6 +1,6 @@
 from setuptools import setup
 
-with open("README.md", 'r') as fi:
+with open("README.md", 'r') as fi: # pragma: no cover
     long_desc = fi.read()
 
 setup(  # pragma: no cover
@@ -11,7 +11,7 @@ setup(  # pragma: no cover
     long_description_content_type='text/markdown',
     author='Andre de Sousa Costa Filho',
     author_email='andre.filho001@outlook.com',
-    version='3.0.1',
+    version='3.0.2',
     packages=['commit_helper'],
     entry_points={
         'console_scripts': [
@@ -20,6 +20,7 @@ setup(  # pragma: no cover
         ]
     },
     install_requires=[
+        'pathlib',
         'pyyaml',
         'argparse',
     ],
