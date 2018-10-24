@@ -1,4 +1,5 @@
 from setuptools import setup
+from setuptools import find_packages
 
 with open("README.md", 'r') as fi: # pragma: no cover
     long_desc = fi.read()
@@ -12,7 +13,7 @@ setup(  # pragma: no cover
     author='Andre de Sousa Costa Filho',
     author_email='andre.filho001@outlook.com',
     version='3.0.2',
-    packages=['commit_helper'],
+    packages=find_packages(),
     entry_points={
         'console_scripts': [
             'commit = commit_helper.__main__:main',

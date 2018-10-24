@@ -1,5 +1,7 @@
 import commit_helper.utils.utils as utils
-# import yaml
+import commit_helper.utils.text_utils as text_utils
+# import commit_helper.utils.file_handler as file_utils
+# import commit_helper.utils.flag_commit_handler as flag_utils
 
 
 def test_get_text():
@@ -11,8 +13,8 @@ def test_get_text():
     def mock_input(s):
         return inputs.pop(0)
 
-    utils.input = mock_input
-    a, b = utils.get_text()
+    text_utils.input = mock_input
+    a, b = text_utils.get_text()
     if not a == 'tag':
         raise AssertionError()
     if not b == 'message':
@@ -26,20 +28,20 @@ def test_get_context():
 
     def mock_input(s):
         return inputs.pop(0)
-    utils.input = mock_input
-    a = utils.get_context()
+    text_utils.input = mock_input
+    a = text_utils.get_context()
     if not a == 'context':
         raise AssertionError()
 
 
 def test_sanitize_as_empty_string():
     string = 'asopdfha'
-    string = utils.sanitize_as_empty_string(string)
+    string = text_utils.sanitize_as_empty_string(string)
     if not string == 'asopdfha':
         raise AssertionError()
 
     string2 = None
-    string2 = utils.sanitize_as_empty_string(string2)
+    string2 = text_utils.sanitize_as_empty_string(string2)
     if not string2 == '':
         raise AssertionError()
 
@@ -55,7 +57,7 @@ def test_gen_co_author():
 
 
 def test_debug(capsys):
-    utils.debug('msg', 666, show=True)
+    text_utils.debug('msg', 666, show=True)
     captured = capsys.readouterr()
     if not captured.out == "DEBUG-> msg: 666\n":
         raise AssertionError()

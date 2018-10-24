@@ -2,9 +2,10 @@
 from pathlib import Path
 # utils imports
 from .utils.utils import parser_cli
-from .utils.utils import debug
+from .utils.text_utils import debug
 from .utils.file_handler import handle_file_based_commit
 from .utils.flag_commit_handler import convention_flag_handler
+
 
 def main():
     parser = parser_cli()
@@ -14,7 +15,7 @@ def main():
     file_path = Path('commiter.yml')
     debug('file_path', file_path, debug_mode)
     if file_path.is_file():
-        handle_file_based_commit(file_path, debug_mode)
+        handle_file_based_commit(file_path, debug_mode, args)
 
     elif args.convention is not '':
         convention_flag_handler(args, debug_mode)

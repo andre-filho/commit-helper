@@ -20,17 +20,6 @@ menu = """
     """
 
 
-def get_text():
-    tag = str(input("type the tag: "))
-    msg = str(input("type the commit message: ")).lower()
-    return tag, msg
-
-
-def get_context():
-        context = str(input('type the context: ') or '').lower()
-        return context
-
-
 def gen_co_author(co_author):
     if co_author is '':
         return ''
@@ -66,14 +55,3 @@ def parser_cli():
     parser.add_argument("-d", "--debug", action="store_true", dest="debug",
                         help="Toggles debug option")
     return parser
-
-
-def sanitize_as_empty_string(string):
-    if string is None:
-        return ''
-    return string
-
-
-def debug(message, value, show=False):
-    if show:
-        print("DEBUG-> %s: %s" % (message, value))
