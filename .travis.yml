@@ -3,15 +3,24 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
+  - "3.7"
 install:
   - pip install -r requirements.txt
-script:
-  - pytest test/ -v
-  - pycodestyle *.py
-after_script:
-  - py.test --cov-report term --cov=. --ignore=test/* --cov-report=html
-  - codeclimate-test-reporter
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
+jobs:
+  include:
+    - stage: unit test
+      script: pytest test/ -v
+    - stage: linter
+      script: pycodestyle commit_helper/
+    - stage: coverage
+      script: py.test --cov-report term --cov=. --ignore=test/*
+    # - stage: pypi release
+    #   script: echo "Deploying on pypi"
+    #   deploy:
+    #     provider: pypi
+    #     user: $PYPI_USER
+    #     password: $PYPI_PASS
+    #     skip_cleanup: true
+    #   if: branch = master
 notification:
   email: false
