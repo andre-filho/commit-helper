@@ -31,7 +31,7 @@ Sometimes we, the developers, go _full-loco_ while programming and make mistakes
 In order to install one of our older versions, check our [previous releases](PREVIOUS_VERSIONS). To install the latest (pip) version, just follow the commands below:
 
 ```bash
-$ pip3 install commit-helper  
+$ pip3 install commit-helper
 ```
 
 ## Usage and configuration
@@ -98,6 +98,11 @@ Supported conventions available:
  - changelog
  - symphony
 
+ ## Troubleshooting
+ If after you've installed commit-helper the `commit` or `commit-helper` commands are not usable at the command line, check if `$HOME/.local/bin` is on your PATH. If not, add it on your .bashrc file by running:
+ ``` bash
+$ echo "export PATH=$HOME/.local/bin:$PATH" >> .bashrc
+ ```
 
 ## Project's maintainers
 | **Name** | **Username** |
