@@ -40,7 +40,7 @@ def test_custom_convention_handler():
     msg = "a nice function"
     tag = "add"
     message = custom.custom_convention(tag, msg, fyle, True)
-    if not message == "tag..:..a nice function":
+    if not message == "add..:..a nice function\n":
         raise AssertionError()
 
 

@@ -23,10 +23,3 @@ def custom_convention(tag, message, config_file, debug_mode):
 
     pattern += '\n'
     return pattern
-
-
-def get_commit_pattern(config_file):
-    pass
-
-def pattern_to_commit(raw_pattern, fields):
-    pass

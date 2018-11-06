@@ -1,3 +1,4 @@
+import sys
 import argparse
 from yaml import dump
 
@@ -63,5 +64,8 @@ def dump_convention(config_file):
     return str(config['convention']).lower()
 
 
-def validate_commiter_file(stream_file):
-    pass
+# this function forces the program to quit if commiter file is invalid
+def validate_commiter_file(stream_file):    # pragma: no cover
+    if stream_file['commit_pattern'] is None or stream_file['context'] is None:
+        print("Error: Your commiter file lacks a commit_pattern or context!")
+        sys.exit(0)
