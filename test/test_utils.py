@@ -62,15 +62,3 @@ def test_debug(capsys):
     captured = capsys.readouterr()
     if not captured.out == "DEBUG-> msg: 666\n":
         raise AssertionError()
-
-
-def test_validate_commiter_file():
-    pass
-# FIXME
-# def test_create_file(tmpdir):
-#     test_file = tmpdir.mkdir('test').join('commiter.yml')
-#     utils.create_file("changelog")
-#     stream = open('commiter.yml', 'r')
-#     convention = yaml.load(stream)
-#     if not convention['convention'] == 'changelog':
-#         raise AssertionError()
