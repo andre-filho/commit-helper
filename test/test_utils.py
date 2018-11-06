@@ -1,5 +1,6 @@
 import commit_helper.utils.utils as utils
 import commit_helper.utils.text_utils as text_utils
+from commit_helper.utils.utils import validate_commiter_file
 # import commit_helper.utils.file_handler as file_utils
 # import commit_helper.utils.flag_commit_handler as flag_utils
 
@@ -62,6 +63,9 @@ def test_debug(capsys):
     if not captured.out == "DEBUG-> msg: 666\n":
         raise AssertionError()
 
+
+def test_validate_commiter_file():
+    pass
 # FIXME
 # def test_create_file(tmpdir):
 #     test_file = tmpdir.mkdir('test').join('commiter.yml')

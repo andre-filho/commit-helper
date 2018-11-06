@@ -55,3 +55,13 @@ def parser_cli():
     parser.add_argument("-d", "--debug", action="store_true", dest="debug",
                         help="Toggles debug option")
     return parser
+
+
+def dump_convention(config_file):
+    if config['convention'] == None:
+        return 'none'
+    return str(config['convention']).lower()
+
+
+def validate_commiter_file(stream_file):
+    pass
