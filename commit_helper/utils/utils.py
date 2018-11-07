@@ -1,3 +1,4 @@
+import sys
 import argparse
 from yaml import dump
 
@@ -18,17 +19,6 @@ menu = """
     3: Symfony CMF
 
     """
-
-
-def get_text():
-    tag = str(input("type the tag: "))
-    msg = str(input("type the commit message: ")).lower()
-    return tag, msg
-
-
-def get_context():
-        context = str(input('type the context: ') or '').lower()
-        return context
 
 
 def gen_co_author(co_author):
@@ -68,12 +58,14 @@ def parser_cli():
     return parser
 
 
-def sanitize_as_empty_string(string):
-    if string is None:
-        return ''
-    return string
+def dump_convention(config_file):
+    if config_file['convention'] is None:
+        return 'none'
+    return str(config_file['convention']).lower()
 
 
-def debug(message, value, show=False):
-    if show:
-        print("DEBUG-> %s: %s" % (message, value))
+# this function forces the program to quit if commiter file is invalid
+def validate_commiter_file(stream_file):    # pragma: no cover
+    if stream_file['commit_pattern'] is None or stream_file['context'] is None:
+        print("Error: Your commiter file lacks a commit_pattern or context!")
+        sys.exit(0)

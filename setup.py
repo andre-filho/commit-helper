@@ -1,6 +1,7 @@
 from setuptools import setup
+from setuptools import find_packages
 
-with open("README.md", 'r') as fi:
+with open("README.md", 'r') as fi:  # pragma: no cover
     long_desc = fi.read()
 
 setup(  # pragma: no cover
@@ -11,8 +12,8 @@ setup(  # pragma: no cover
     long_description_content_type='text/markdown',
     author='Andre de Sousa Costa Filho',
     author_email='andre.filho001@outlook.com',
-    version='3.0.1',
-    packages=['commit_helper'],
+    version='3.1.2',
+    packages=find_packages(),
     entry_points={
         'console_scripts': [
             'commit = commit_helper.__main__:main',
@@ -20,6 +21,7 @@ setup(  # pragma: no cover
         ]
     },
     install_requires=[
+        'pathlib',
         'pyyaml',
         'argparse',
     ],
