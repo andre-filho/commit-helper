@@ -1,6 +1,6 @@
 import commit_helper.utils.utils as utils
 import commit_helper.utils.text_utils as text_utils
-from commit_helper.utils.utils import validate_commiter_file
+# from commit_helper.utils.utils import validate_commiter_file
 # import commit_helper.utils.file_handler as file_utils
 # import commit_helper.utils.flag_commit_handler as flag_utils
 

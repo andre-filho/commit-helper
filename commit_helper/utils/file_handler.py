@@ -1,8 +1,7 @@
+from os import system
 from yaml import safe_load
 from yaml import YAMLError
-from os import system
 # utils imports
-from .utils import create_file
 from .utils import gen_co_author
 from .utils import validate_commiter_file
 from .text_utils import debug
