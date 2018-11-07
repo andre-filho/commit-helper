@@ -22,7 +22,6 @@ def convention_flag_handler(args, debug_mode):
 
     else:
         tag, msg = get_text()
-
         if convention == 'angular' or convention == 'karma':
             context = get_context()
             commit_message = angular_convention(tag, msg, context)

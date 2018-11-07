@@ -32,18 +32,7 @@ def handle_file_based_commit(file_path, debug_mode, args):
                 commit_message = custom_convention(tag, msg, config)
 
             else:
-                print('You are using the %s convention' % convention)
-                tag, msg = get_text()
-
-                if convention == 'angular' or convention == 'karma':
-                    context = get_context()
-                    commit_message = angular_convention(tag, msg, context)
-
-                elif convention == 'changelog':
-                    commit_message = changelog_convention(tag, msg)
-
-                elif convention == 'symphony':
-                    commit_message = symphony_convention(tag, msg)
+                commit_message = handle_conventioned_commit(convention)
 
             commit_message += gen_co_author(args.co_author)
             debug('commit message', commit_message, debug_mode)
@@ -51,3 +40,20 @@ def handle_file_based_commit(file_path, debug_mode, args):
 
         except YAMLError as err:
             print(err)
+
+
+def handle_conventioned_commit(convention):
+    print('You are using the %s convention' % convention)
+    tag, msg = get_text()
+
+    if convention == 'angular' or convention == 'karma':
+        context = get_context()
+        commit_message = angular_convention(tag, msg, context)
+
+    elif convention == 'changelog':
+        commit_message = changelog_convention(tag, msg)
+
+    elif convention == 'symphony':
+        commit_message = symphony_convention(tag, msg)
+
+    return commit_message

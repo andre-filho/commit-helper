@@ -1,3 +1,4 @@
+import yaml
 import commit_helper.utils.utils as utils
 import commit_helper.utils.text_utils as text_utils
 # from commit_helper.utils.utils import validate_commiter_file
@@ -61,4 +62,22 @@ def test_debug(capsys):
     text_utils.debug('msg', 666, show=True)
     captured = capsys.readouterr()
     if not captured.out == "DEBUG-> msg: 666\n":
+        raise AssertionError()
+
+
+def test_dump_convention():
+    not_good_conf = """
+    convention:
+    """
+
+    good_conf = """
+    convention: asdf
+    """
+    response1 = utils.dump_convention(yaml.load(not_good_conf))
+    response2 = utils.dump_convention(yaml.load(good_conf))
+
+    if not response1 == 'none':
+        raise AssertionError()
+
+    if not response2 == 'asdf':
         raise AssertionError()

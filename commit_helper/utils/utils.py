@@ -59,9 +59,9 @@ def parser_cli():
 
 
 def dump_convention(config_file):
-    if config['convention'] == None:
+    if config_file['convention'] is None:
         return 'none'
-    return str(config['convention']).lower()
+    return str(config_file['convention']).lower()
 
 
 # this function forces the program to quit if commiter file is invalid
