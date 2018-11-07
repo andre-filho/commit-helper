@@ -9,17 +9,16 @@ def custom_convention(tag, message, config_file, debug_mode):
     debug('pattern from file', config_file['commit_pattern'], debug_mode)
 
     pattern = str(config_file['commit_pattern'] or '')
-    debug('pattern processed', pattern, debug_mode)
+    debug('pattern acquired', pattern, debug_mode)
 
     context = ''
-
     pattern = pattern.replace('tag', str(tag))
     pattern = pattern.replace('message', str(message))
-    debug('pattern post replace', pattern, debug_mode)
 
     if config_file['context']:
         context = get_context()
-        pattern.replace('context', context)
+        pattern = pattern.replace('context', context)
 
+    debug('pattern post replace', pattern, debug_mode)
     pattern += '\n'
     return pattern

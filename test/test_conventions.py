@@ -3,7 +3,7 @@ import commit_helper.conventions.karma_angular as angular
 import commit_helper.conventions.changelog as changelog
 import commit_helper.conventions.symphony_cmf as symphony
 import commit_helper.conventions.no_convention as no_convention
-import commit_helper.conventions.custom_convention_handler as custom
+import commit_helper.conventions.custom_convention as custom
 
 
 def test_angular_convention_with_context():
@@ -30,7 +30,7 @@ def test_symphony_convention():
         raise AssertionError()
 
 
-def test_custom_convention_handler():
+def test_custom_convention():
     fyle = yaml.safe_load("""
     convention: custom
     commit_pattern: tag..:..message

@@ -3,6 +3,7 @@ from yaml import safe_load
 from yaml import YAMLError
 # utils imports
 from .utils import gen_co_author
+from .utils import dump_convention
 from .utils import validate_commiter_file
 from .text_utils import debug
 from .text_utils import get_text
@@ -12,6 +13,7 @@ from commit_helper.conventions.karma_angular import angular_convention
 from commit_helper.conventions.changelog import changelog_convention
 from commit_helper.conventions.symphony_cmf import symphony_convention
 from commit_helper.conventions.no_convention import just_message
+from commit_helper.conventions.custom_convention import custom_convention
 
 
 def handle_file_based_commit(file_path, debug_mode, args):
@@ -19,24 +21,24 @@ def handle_file_based_commit(file_path, debug_mode, args):
         try:
             config = safe_load(stream)
             debug('convention from file', config['convention'], debug_mode)
-            convention = dump_convention(config_file)
+            convention = dump_convention(config)
 
             if convention == 'none':
                 print('You are not using a convention')
-                commit_message = just_message()
+                commit_msg = just_message()
 
             elif convention == 'custom':
                 print('You are using your custom convention')
                 validate_commiter_file(config)
                 tag, msg = get_text()
-                commit_message = custom_convention(tag, msg, config)
+                commit_msg = custom_convention(tag, msg, config, debug_mode)
 
             else:
-                commit_message = handle_conventioned_commit(convention)
+                commit_msg = handle_conventioned_commit(convention)
 
-            commit_message += gen_co_author(args.co_author)
-            debug('commit message', commit_message, debug_mode)
-            system('git commit -m "%s"' % commit_message)
+            commit_msg += gen_co_author(args.co_author)
+            debug('commit message', commit_msg, debug_mode)
+            system('git commit -m "%s"' % commit_msg)
 
         except YAMLError as err:
             print(err)
