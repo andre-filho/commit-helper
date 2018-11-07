@@ -73,8 +73,8 @@ def test_dump_convention():
     good_conf = """
     convention: asdf
     """
-    response1 = utils.dump_convention(yaml.load(not_good_conf))
-    response2 = utils.dump_convention(yaml.load(good_conf))
+    response1 = utils.dump_convention(yaml.safe_load(not_good_conf))
+    response2 = utils.dump_convention(yaml.safe_load(good_conf))
 
     if not response1 == 'none':
         raise AssertionError()
