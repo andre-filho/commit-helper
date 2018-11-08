@@ -27,5 +27,6 @@ setup(  # pragma: no cover
         'pathlib',
         'pyyaml',
         'argparse',
+        'colored',
     ],
 )
