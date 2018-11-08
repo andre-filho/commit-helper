@@ -4,6 +4,9 @@ from setuptools import find_packages
 with open("README.md", 'r') as fi:  # pragma: no cover
     long_desc = fi.read()
 
+with open("VERSION.txt", 'r') as ver:   # pragma: no cover
+    version = ver.read()
+
 setup(  # pragma: no cover
     name='commit-helper',
     description="A python program that helps you write commits following commit conventions",  # nopep8
@@ -12,7 +15,7 @@ setup(  # pragma: no cover
     long_description_content_type='text/markdown',
     author='Andre de Sousa Costa Filho',
     author_email='andre.filho001@outlook.com',
-    version='3.1.2',
+    version=str(version).replace('\n', ''),
     packages=find_packages(),
     entry_points={
         'console_scripts': [
