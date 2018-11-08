@@ -6,3 +6,4 @@ coverage==4.3
 pytest-cov==2.0.0
 codeclimate-test-reporter
 codacy-coverage==1.3
+colored==1.3.93
