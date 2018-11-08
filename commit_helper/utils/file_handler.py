@@ -5,7 +5,10 @@ from yaml import YAMLError
 from .utils import gen_co_author
 from .utils import dump_convention
 from .utils import validate_commiter_file
+from .colors import RESET
+from .colors import NOTIFY_COLOR
 from .text_utils import debug
+from .text_utils import notify
 from .text_utils import get_text
 from .text_utils import get_context
 # conventions imports
@@ -24,11 +27,11 @@ def handle_file_based_commit(file_path, debug_mode, args):
             convention = dump_convention(config)
 
             if convention == 'none':
-                print('You are not using a convention')
+                notify('You are not using a convention')
                 commit_msg = just_message()
 
             elif convention == 'custom':
-                print('You are using your custom convention')
+                notify('You are using your custom convention')
                 validate_commiter_file(config)
                 tag, msg = get_text()
                 commit_msg = custom_convention(tag, msg, config, debug_mode)
@@ -45,7 +48,7 @@ def handle_file_based_commit(file_path, debug_mode, args):
 
 
 def handle_conventioned_commit(convention):
-    print('You are using the %s convention' % convention)
+    notify('You are using the %s convention' % convention)
     tag, msg = get_text()
 
     if convention == 'angular' or convention == 'karma':

@@ -1,6 +1,9 @@
 import yaml
 import commit_helper.utils.utils as utils
 import commit_helper.utils.text_utils as text_utils
+from commit_helper.utils.colors import RESET
+from commit_helper.utils.colors import DEBUG_COLOR
+from commit_helper.utils.colors import NOTIFY_COLOR
 # from commit_helper.utils.utils import validate_commiter_file
 # import commit_helper.utils.file_handler as file_utils
 # import commit_helper.utils.flag_commit_handler as flag_utils
@@ -61,7 +64,7 @@ def test_gen_co_author():
 def test_debug(capsys):
     text_utils.debug('msg', 666, show=True)
     captured = capsys.readouterr()
-    if not captured.out == "DEBUG-> msg: 666\n":
+    if not captured.out == DEBUG_COLOR + "DEBUG: msg ~> 666" + RESET + "\n":
         raise AssertionError()
 
 
@@ -80,4 +83,11 @@ def test_dump_convention():
         raise AssertionError()
 
     if not response2 == 'asdf':
+        raise AssertionError()
+
+
+def test_notify(capsys):
+    text_utils.notify('msg')
+    captured = capsys.readouterr()
+    if not captured.out == NOTIFY_COLOR + "msg" + RESET + "\n":
         raise AssertionError()
