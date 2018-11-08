@@ -26,6 +26,19 @@ Keeping a commit policy may sound like an easy thing to do, but in reality we bo
 
 Sometimes we, the developers, go _full-loco_ while programming and make mistakes when commiting. That's fine, everyone makes mistakes. But, what if those mistakes could be avoided?
 
+## Screenshots
+
+<div style="margin-right:auto;margin-left:auto;">
+	<img src="assets/commit.gif"/>
+    <img src="assets/--tudo.gif"/>
+    <img src="assets/--co-author.gif"/>
+    <img src="assets/--debug.gif"/>
+    <img src="assets/--no-file.gif"/>
+    <img src="assets/--convention.gif"/>
+</div>
+
+
+
 ## Installation
 
 In order to install one of our older versions, check our [previous releases](PREVIOUS_VERSIONS). To install the latest (pip) version, just follow the commands below:
@@ -92,11 +105,23 @@ convention: symphony  # [Tag] commit message
 convention: none      # Commit message
 ```
 
+In case that you or your organization does already have a commit convention that is not listed above, you can configure it in the commiter.yml file as following:
+
+```yaml
+convention: custom
+# considering a commit message like '{add} (stuff) ~> in file foo.br'
+commit_pattern: '{tag} (context) ~> message'
+# tag, message and context are reserved words that will be replaced in your commit message
+context: true # this is a must have field! If your pattern doesn't have one, assign false to it
+```
+
 Supported conventions available:
 
- - angular/karma
+ - angular
+ - karma
  - changelog
  - symphony
+ - a custom one that you may invent ;)
 
  ## Troubleshooting
  If after you've installed commit-helper the `commit` or `commit-helper` commands are not usable at the command line, check if `$HOME/.local/bin` is on your PATH. If not, add it on your .bashrc file by running:
