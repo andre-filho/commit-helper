@@ -1,12 +1,10 @@
 import yaml
 import commit_helper.utils.utils as utils
 import commit_helper.utils.text_utils as text_utils
+
 from commit_helper.utils.colors import RESET
 from commit_helper.utils.colors import DEBUG_COLOR
 from commit_helper.utils.colors import NOTIFY_COLOR
-# from commit_helper.utils.utils import validate_commiter_file
-# import commit_helper.utils.file_handler as file_utils
-# import commit_helper.utils.flag_commit_handler as flag_utils
 
 
 def test_get_text():
@@ -90,4 +88,44 @@ def test_notify(capsys):
     text_utils.notify('msg')
     captured = capsys.readouterr()
     if not captured.out == NOTIFY_COLOR + "msg" + RESET + "\n":
+        raise AssertionError()
+
+
+def test_handle_tag_message_args_with_args():
+    tag, msg = text_utils.handle_tag_message_args('tag', 'msg')
+
+    if not (tag is 'tag' and msg is 'msg'):
+        raise AssertionError()
+
+
+def test_handle_tag_message_args_without_args():
+    inputs = ['tag', 'msg']
+
+    def mock_input(s):
+        return inputs.pop(0)
+
+    text_utils.input = mock_input
+    tag, msg = text_utils.handle_tag_message_args()
+
+    if not (tag == 'tag' and msg == 'msg'):
+        raise AssertionError()
+
+
+def test_handle_context_arg_with_args():
+    context = text_utils.handle_context_arg('context')
+
+    if not context is 'context':
+        raise AssertionError()
+
+
+def test_handle_context_arg_without_args():
+    inputs = ['context']
+
+    def mock_input(s):
+        return inputs.pop(0)
+
+    text_utils.input = mock_input
+    context = text_utils.handle_context_arg()
+
+    if not context == 'context':
         raise AssertionError()
