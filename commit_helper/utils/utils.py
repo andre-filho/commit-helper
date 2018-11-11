@@ -6,7 +6,6 @@ from .text_utils import handle_tag_message_args
 from commit_helper.conventions.karma_angular import angular_convention
 from commit_helper.conventions.changelog import changelog_convention
 from commit_helper.conventions.symphony_cmf import symphony_convention
-from commit_helper.conventions.no_convention import just_message
 
 
 supported_conventions = [

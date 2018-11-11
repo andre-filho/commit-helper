@@ -6,8 +6,6 @@ from .utils import handle_conventioned_commit
 from .text_utils import debug
 from .text_utils import get_text
 from .text_utils import get_context
-from .text_utils import handle_context_arg
-from .text_utils import handle_tag_message_args
 # conventions imports
 from commit_helper.conventions.karma_angular import angular_convention
 from commit_helper.conventions.changelog import changelog_convention
