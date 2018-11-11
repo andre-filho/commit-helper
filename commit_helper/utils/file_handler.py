@@ -5,6 +5,7 @@ from yaml import YAMLError
 from .utils import gen_co_author
 from .utils import dump_convention
 from .utils import validate_commiter_file
+from .utils import handle_conventioned_commit
 from .colors import RESET
 from .colors import NOTIFY_COLOR
 from .text_utils import debug
@@ -37,7 +38,8 @@ def handle_file_based_commit(file_path, debug_mode, args):
                 commit_msg = custom_convention(tag, msg, config, debug_mode)
 
             else:
-                commit_msg = handle_conventioned_commit(convention)
+                notify('You are using the %s convention' % convention)
+                commit_msg = handle_conventioned_commit(convention, args)
 
             commit_msg += gen_co_author(args.co_author)
             debug('commit message', commit_msg, debug_mode)
@@ -45,20 +47,3 @@ def handle_file_based_commit(file_path, debug_mode, args):
 
         except YAMLError as err:
             print(err)
-
-
-def handle_conventioned_commit(convention):
-    notify('You are using the %s convention' % convention)
-    tag, msg = get_text()
-
-    if convention == 'angular' or convention == 'karma':
-        context = get_context()
-        commit_message = angular_convention(tag, msg, context)
-
-    elif convention == 'changelog':
-        commit_message = changelog_convention(tag, msg)
-
-    elif convention == 'symphony':
-        commit_message = symphony_convention(tag, msg)
-
-    return commit_message

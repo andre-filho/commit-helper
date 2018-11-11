@@ -11,9 +11,13 @@ def main():
     parser = parser_cli()
     args = parser.parse_args()
     debug_mode = args.debug
+
     debug('args variable', args, debug_mode)
+
     file_path = Path('commiter.yml')
+
     debug('file_path', file_path, debug_mode)
+
     if file_path.is_file():
         handle_file_based_commit(file_path, debug_mode, args)
 

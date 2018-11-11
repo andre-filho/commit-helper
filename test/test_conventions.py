@@ -44,14 +44,21 @@ def test_custom_convention():
         raise AssertionError()
 
 
-def test_no_convention():
+def test_no_convention_without_args():
     inputs = [
         "message",
     ]
 
     def mock_input(s):
         return inputs.pop(0)
+
     no_convention.input = mock_input
     message = no_convention.just_message()
+    if not message == 'Message\n':
+        raise AssertionError()
+
+
+def test_no_convention_with_args():
+    message = no_convention.just_message('Message')
     if not message == 'Message\n':
         raise AssertionError()

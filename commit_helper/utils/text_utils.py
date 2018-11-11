@@ -1,7 +1,7 @@
-from commit_helper.utils.colors import RESET
-from commit_helper.utils.colors import DEBUG_COLOR
-from commit_helper.utils.colors import INPUT_COLOR
-from commit_helper.utils.colors import NOTIFY_COLOR
+from .colors import RESET
+from .colors import DEBUG_COLOR
+from .colors import INPUT_COLOR
+from .colors import NOTIFY_COLOR
 
 
 def get_text():
@@ -30,3 +30,15 @@ def debug(message, value, show=False):
     if show:
         mid = 'DEBUG: ' + str(message) + ' ~> ' + str(value)
         print(DEBUG_COLOR + mid + RESET)
+
+
+def handle_tag_message_args(tag='', message=''):
+    if tag + message is not '':
+        return tag, message
+    return get_text()
+
+
+def handle_context_arg(context=''):
+    if context is not '':
+        return context
+    return get_context()
