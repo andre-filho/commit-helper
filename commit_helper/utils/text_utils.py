@@ -1,7 +1,7 @@
-from commit_helper.utils.colors import RESET
-from commit_helper.utils.colors import DEBUG_COLOR
-from commit_helper.utils.colors import INPUT_COLOR
-from commit_helper.utils.colors import NOTIFY_COLOR
+from .colors import RESET
+from .colors import DEBUG_COLOR
+from .colors import INPUT_COLOR
+from .colors import NOTIFY_COLOR
 
 
 def get_text():
