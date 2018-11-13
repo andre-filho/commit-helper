@@ -22,8 +22,7 @@ def convention_flag_handler(args, debug_mode):
             commit_message = just_message(msg=args.message)
         else:
             commit_message = just_message()
-
-        create_file('none', args.no_file)
+        convention = 'none'
 
     else:
         commit_message = handle_conventioned_commit(convention, args)
