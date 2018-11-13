@@ -1,5 +1,5 @@
 pyyaml==3.13
-pytest==3.10.0
+pytest==3.10.1
 pycodestyle==2.4.0
 argparse==1.4.0
 coverage==4.5.1
