@@ -1,7 +1,7 @@
 from colored import fg
 from colored import attr
 
-INPUT_COLOR = fg(6)
-NOTIFY_COLOR = fg(14)
-DEBUG_COLOR = fg(239)
+INPUT_COLOR = fg(14)
+NOTIFY_COLOR = fg(15)
+DEBUG_COLOR = fg(244)
 RESET = attr(0)
