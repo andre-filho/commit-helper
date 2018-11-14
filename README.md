@@ -19,6 +19,9 @@
 </p>
 
 ## What does it do?
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c394fb61c1c64b41a4a73cafe5f0efdb)](https://app.codacy.com/app/andre-filho/commit-helper?utm_source=github.com&utm_medium=referral&utm_content=andre-filho/commit-helper&utm_campaign=Badge_Grade_Settings)
+
 The commit-helper do exactly what it's name suggest: helps you create and maintain your commit policy by tailoring your commit message into a commit convention.
 
 ## Why should I use this?
