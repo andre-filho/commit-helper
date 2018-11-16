@@ -23,7 +23,10 @@ def handle_file_based_commit(file_path, debug_mode, args):
 
             if convention == 'none':
                 notify('You are not using a convention')
-                commit_msg = just_message()
+                if args.message is not '':
+                    commit_msg = just_message(msg=args.message)
+                else:
+                    commit_msg = just_message()
 
             elif convention == 'custom':
                 notify('You are using your custom convention')
