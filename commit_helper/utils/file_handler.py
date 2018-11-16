@@ -2,20 +2,14 @@ from os import system
 from yaml import safe_load
 from yaml import YAMLError
 # utils imports
+from .text_utils import debug
+from .text_utils import notify
+from .text_utils import get_text
 from .utils import gen_co_author
 from .utils import dump_convention
 from .utils import validate_commiter_file
 from .utils import handle_conventioned_commit
-from .colors import RESET
-from .colors import NOTIFY_COLOR
-from .text_utils import debug
-from .text_utils import notify
-from .text_utils import get_text
-from .text_utils import get_context
 # conventions imports
-from commit_helper.conventions.karma_angular import angular_convention
-from commit_helper.conventions.changelog import changelog_convention
-from commit_helper.conventions.symphony_cmf import symphony_convention
 from commit_helper.conventions.no_convention import just_message
 from commit_helper.conventions.custom_convention import custom_convention
 
@@ -29,7 +23,10 @@ def handle_file_based_commit(file_path, debug_mode, args):
 
             if convention == 'none':
                 notify('You are not using a convention')
-                commit_msg = just_message()
+                if args.message is not '':
+                    commit_msg = just_message(msg=args.message)
+                else:
+                    commit_msg = just_message()
 
             elif convention == 'custom':
                 notify('You are using your custom convention')

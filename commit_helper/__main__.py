@@ -28,6 +28,11 @@ def main():
 
     elif args.convention is not '':
         convention_flag_handler(args, debug_mode)
+        return
+
+    elif file_path.is_file():
+        handle_file_based_commit(file_path, debug_mode, args)
+        return
 
     else:
         debug('parser full return', parser.parse_args(), debug_mode)

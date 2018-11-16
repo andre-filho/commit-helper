@@ -1,6 +1,7 @@
 import sys
 import argparse
 from yaml import dump
+from .text_utils import notify
 from .text_utils import handle_context_arg
 from .text_utils import handle_tag_message_args
 from commit_helper.conventions.karma_angular import angular_convention
@@ -33,14 +34,16 @@ def gen_co_author(co_author):
     return '\nCo-authored-by: %s' % co_author
 
 
+# TEST
 def create_file(convention_name, dont_create=False):    # pragma: no cover
     if not dont_create:
         data = dict(
             convention=convention_name
         )
         with open('commiter.yml', 'w') as output_file:
-            dump(data, output_file, default_flow_style=False)
-        print('Successfully created the commiter file.')
+            output_file.write(dump(data, stream=None,
+                                   default_flow_style=False))
+        notify('Successfully created the commiter file.')
 
 
 def parser_cli():
