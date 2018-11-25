@@ -6,14 +6,14 @@ import commit_helper.conventions.no_convention as no_convention
 import commit_helper.conventions.custom_convention as custom
 
 
-def test_angular_convention_with_context():
-    message = angular.angular_convention('TAG', 'message', 'context')
+def test_karma_angular_convention_with_context():
+    message = angular.karma_angular_convention('TAG', 'message', 'context')
     if not (message == 'tag(context): message\n'):
         raise AssertionError()
 
 
-def test_angular_convention_without_context():
-    message = angular.angular_convention('tag', 'message', '')
+def test_karma_angular_convention_without_context():
+    message = angular.karma_angular_convention('tag', 'message', '')
     if not (message == 'tag: message\n'):
         raise AssertionError()
 

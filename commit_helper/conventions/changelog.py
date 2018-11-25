@@ -5,14 +5,14 @@ def changelog_convention(tag, msg):
 
 
 changelog_convention_help = \
-"""
-Convention format:
+    """
+    Convention format:
 
-TAG: message
----
-Tag usage:
+    TAG: message
+    ---
+    Tag usage:
 
-ADD:
+    ADD:
 
 
-"""
+    """

@@ -4,7 +4,7 @@ from yaml import dump
 from .text_utils import notify
 from .text_utils import handle_context_arg
 from .text_utils import handle_tag_message_args
-from commit_helper.conventions.karma_angular import angular_convention
+from commit_helper.conventions.karma_angular import karma_angular_convention
 from commit_helper.conventions.changelog import changelog_convention
 from commit_helper.conventions.symphony_cmf import symphony_convention
 
@@ -102,7 +102,7 @@ def handle_conventioned_commit(convention, args):
 
     if convention == 'angular' or convention == 'karma':
         context = handle_context_arg(args.context)
-        commit_message = angular_convention(tag, msg, context)
+        commit_message = karma_angular_convention(tag, msg, context)
 
     elif convention == 'changelog':
         commit_message = changelog_convention(tag, msg)

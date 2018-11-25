@@ -11,6 +11,7 @@ from commit_helper.utils.colors import HELP
 from commit_helper.utils.colors import RESET
 from commit_helper.utils.colors import MIN_ERROR
 from commit_helper.utils.text_utils import debug
+from commit_helper.utils.text_utils import print_help
 from commit_helper.utils.utils import dump_convention
 
 
@@ -40,16 +41,16 @@ def convention_help_handler(file_path, args, debug_mode):
 # TODO: test
 def get_help_to_defined_convention(convention):
     if convention is 'angular':
-        pass
+        print_help(angular_convention_help)
 
     elif convention is 'changelog':
-        pass
+        print_help(changelog_convention_help)
 
     elif convention is 'karma':
-        pass
+        print_help(karma_convention_help)
 
     elif convention is 'symphony':
-        pass
+        print_help(symphony_convention_help)
 
     else:
         print(MIN_ERROR + 'The chosen convention has no helper!' + RESET)

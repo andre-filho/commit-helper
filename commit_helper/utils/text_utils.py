@@ -2,6 +2,7 @@ from .colors import RESET
 from .colors import DEBUG_COLOR
 from .colors import INPUT_COLOR
 from .colors import NOTIFY_COLOR
+from .colors import HELP
 
 
 def get_text():
@@ -30,6 +31,10 @@ def debug(message, value, show=False):
     if show:
         mid = 'DEBUG: ' + str(message) + ' ~> ' + str(value)
         print(DEBUG_COLOR + mid + RESET)
+
+
+def print_help(message):
+    print(HELP + str(message) + RESET)
 
 
 def handle_tag_message_args(tag='', message=''):
