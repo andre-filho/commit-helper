@@ -23,9 +23,6 @@ def main():
         convention_help_handler(file_path, args, debug_mode)
         return
 
-    elif file_path.is_file():
-        handle_file_based_commit(file_path, debug_mode, args)
-
     elif args.convention is not '':
         convention_flag_handler(args, debug_mode)
         return
