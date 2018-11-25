@@ -4,9 +4,10 @@ from yaml import dump
 from .text_utils import notify
 from .text_utils import handle_context_arg
 from .text_utils import handle_tag_message_args
-from commit_helper.conventions.karma_angular import karma_angular_convention
+from commit_helper.conventions.atom import atom_convention
 from commit_helper.conventions.changelog import changelog_convention
 from commit_helper.conventions.symphony_cmf import symphony_convention
+from commit_helper.conventions.karma_angular import karma_angular_convention
 
 
 supported_conventions = [
@@ -15,17 +16,8 @@ supported_conventions = [
     "changelog",
     "symphony",
     "message",
+    "atom",
 ]
-
-menu = """
-    What type of commit convention are you using?
-
-    default: Just the message
-    1: Karma/Angular
-    2: Conventional changelog
-    3: Symfony CMF
-
-    """
 
 
 def gen_co_author(co_author):
@@ -109,5 +101,8 @@ def handle_conventioned_commit(convention, args):
 
     elif convention == 'symphony':
         commit_message = symphony_convention(tag, msg)
+
+    elif convention == 'atom':
+        commit_message = atom_convention(tag, message)
 
     return commit_message

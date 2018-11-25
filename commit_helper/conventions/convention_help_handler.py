@@ -2,6 +2,7 @@
 from yaml import safe_load
 from yaml import YAMLError
 # convention imports
+from .atom import atom_convention_help
 from .changelog import changelog_convention_help
 from .karma_angular import karma_convention_help
 from .karma_angular import angular_convention_help
@@ -51,6 +52,9 @@ def get_help_to_defined_convention(convention):
 
     elif convention is 'symphony':
         print_help(symphony_convention_help)
+
+    elif convention is 'atom':
+        print_help(atom_convention_help)
 
     else:
         print(MIN_ERROR + 'The chosen convention has no helper!' + RESET)
