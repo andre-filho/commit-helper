@@ -3,7 +3,7 @@ from yaml import safe_load
 from yaml import YAMLError
 # convention imports
 from .atom import atom_convention_help
-from .changelog import changelog_convention_help
+from .tagged import tagged_convention_help
 from .karma_angular import karma_convention_help
 from .karma_angular import angular_convention_help
 from .symphony_cmf import symphony_convention_help
@@ -44,8 +44,8 @@ def get_help_to_defined_convention(convention):
     if convention is 'angular':
         print_help(angular_convention_help)
 
-    elif convention is 'changelog':
-        print_help(changelog_convention_help)
+    elif convention is 'tagged':
+        print_help(tagged_convention_help)
 
     elif convention is 'karma':
         print_help(karma_convention_help)

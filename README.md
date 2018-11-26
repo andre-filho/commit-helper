@@ -76,7 +76,7 @@ for the sake of not losing your precious time.
 ```bash
  $ commit -h
 usage: commit [-h] [-t TAG] [-m MESSAGE] [-ct CONTEXT] [-ca CO_AUTHOR] [-nf]
-              [-c {angular,karma,changelog,symphony,message}] [-d]
+              [-c {angular,karma,tagged,symphony,message}] [-d]
 
 A commit formatter tool to help you follow commit conventions.
 
@@ -90,7 +90,7 @@ optional arguments:
   -ca CO_AUTHOR, --co-author CO_AUTHOR
                         Make your friend an co-author to the commit
   -nf, --no-file        Disables the creation of a commiter.yml file
-  -c {angular,karma,changelog,symphony,message}, --convention {angular,karma,changelog,symphony,message}
+  -c {angular,karma,tagged,symphony,message}, --convention {angular,karma,tagged,symphony,message}
                         Selects a convention to be used for the commit.
                         Required if there's no commiter.yml file.
   -d, --debug           Toggles debug option
@@ -106,7 +106,7 @@ $ commit --co-author "foo bar doritous <foobar@douritos.com>"
 Or if you are using this for the first time in your project:
 
 ```bash
-$ commit --convention changelog
+$ commit --convention tagged
 ```
 
 To work even more smoothly, have in your working directory a file named **commiter.yml**. In this file you must pass the commit convention that you want to use, following the example:
@@ -120,7 +120,7 @@ convention: karma   # tag(context): commit message
 
 # or
 
-convention: changelog # TAG: commit message
+convention: tagged # TAG: commit message
 
 # or
 
@@ -145,7 +145,7 @@ Supported conventions available:
 
  - angular
  - karma
- - changelog
+ - tagged
  - symphony
  - a custom one that you may create :)
 

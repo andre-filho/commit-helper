@@ -1,6 +1,6 @@
 import yaml
 import commit_helper.conventions.karma_angular as angular
-import commit_helper.conventions.changelog as changelog
+import commit_helper.conventions.tagged as tagged
 import commit_helper.conventions.symphony_cmf as symphony
 import commit_helper.conventions.no_convention as no_convention
 import commit_helper.conventions.custom_convention as custom
@@ -18,8 +18,8 @@ def test_karma_angular_convention_without_context():
         raise AssertionError()
 
 
-def test_changelog_convention():
-    message = changelog.changelog_convention('tag', 'message')
+def test_tagged_convention():
+    message = tagged.tagged_convention('tag', 'message')
     if not (message == 'TAG: message\n'):
         raise AssertionError()
 
