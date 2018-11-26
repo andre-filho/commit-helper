@@ -9,7 +9,7 @@ def karma_angular_convention(tag, msg, context):
 
 angular_convention_help = \
     """
-    General format:
+    The angular convention:
 
     <tag>(<scope>): <message>
     <BLANK>
@@ -36,7 +36,7 @@ angular_convention_help = \
 
 karma_convention_help = \
     """
-    General format:
+    The karma convention:
 
     <tag>(<scope>): <message>
     <BLANK>

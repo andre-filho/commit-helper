@@ -6,7 +6,7 @@ def tagged_convention(tag, msg):
 
 tagged_convention_help = \
     """
-    Convention format:
+    The tagged convention:
 
     TAG: message
     <BLANK>

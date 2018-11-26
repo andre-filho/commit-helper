@@ -7,7 +7,7 @@ def atom_convention(tag, msg):
 
 atom_convention_help = \
     """
-    General format:
+    The atom convention:
 
     :<tag>: <Message>
     <BREAK>

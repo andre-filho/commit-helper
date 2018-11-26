@@ -6,7 +6,7 @@ def symphony_convention(tag, msg):
 
 symphony_convention_help = \
     """
-    General format:
+    The symphony CMF convention:
 
     [<Tag>] <message>
     <BLANK>
