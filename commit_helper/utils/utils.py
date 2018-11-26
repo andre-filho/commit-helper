@@ -70,7 +70,7 @@ def parser_cli():
                         help='Toggles debug option')
 
     parser.add_argument('-s', '--show', dest='show_convention_tags',
-                        choices=supported_conventions, default='',
+                        default='False', action='store_true',
                         help='Shows the rules of a given convention')
 
     return parser

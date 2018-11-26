@@ -20,7 +20,7 @@ def main():
 
     debug('file_path', file_path, debug_mode)
 
-    if args.show_convention_tags is not '':
+    if args.show_convention_tags is True:
         convention_help_handler(file_path, args, debug_mode)
         return
 

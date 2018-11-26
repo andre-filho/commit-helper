@@ -19,7 +19,7 @@ from commit_helper.utils.utils import dump_convention
 # TODO: test
 def convention_help_handler(file_path, args, debug_mode):
     if file_path.is_file() and args.convention is '':
-        debug('Found file', str(file_path), debug_mode)
+        debug('Found file for help', str(file_path), debug_mode)
         with open(str(file_path)) as target:
             try:
                 config = safe_load(target)
@@ -36,24 +36,26 @@ def convention_help_handler(file_path, args, debug_mode):
         print(MIN_ERROR + 'No convention was specified!' + RESET)
         return
 
-    get_help_to_defined_convention(convention)
+    debug('convention captured for helper', convention, debug_mode)
+    get_help_to_defined_convention(convention, debug_mode)
 
 
 # TODO: test
-def get_help_to_defined_convention(convention):
-    if convention is 'angular':
+def get_help_to_defined_convention(convention, debug_mode):
+    debug('recieved convention for help catch', convention, debug_mode)
+    if convention == 'angular':
         print_help(angular_convention_help)
 
-    elif convention is 'tagged':
+    elif convention == 'tagged':
         print_help(tagged_convention_help)
 
-    elif convention is 'karma':
+    elif convention == 'karma':
         print_help(karma_convention_help)
 
-    elif convention is 'symphony':
+    elif convention == 'symphony':
         print_help(symphony_convention_help)
 
-    elif convention is 'atom':
+    elif convention == 'atom':
         print_help(atom_convention_help)
 
     else:
