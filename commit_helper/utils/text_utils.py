@@ -33,7 +33,6 @@ def debug(message, value, show=False):
         print(DEBUG_COLOR + mid + RESET)
 
 
-# TEST:
 def print_help(message):
     print(HELP + str(message) + RESET)
 
