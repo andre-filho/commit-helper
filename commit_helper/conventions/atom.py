@@ -1,4 +1,3 @@
-# TEST:
 def atom_convention(tag, msg):
     tag = tag.lower()
     msg = msg.capitalize()

@@ -1,9 +1,10 @@
 import yaml
-import commit_helper.conventions.karma_angular as angular
+import commit_helper.conventions.atom as atom
 import commit_helper.conventions.tagged as tagged
+import commit_helper.conventions.karma_angular as angular
 import commit_helper.conventions.symphony_cmf as symphony
-import commit_helper.conventions.no_convention as no_convention
 import commit_helper.conventions.custom_convention as custom
+import commit_helper.conventions.no_convention as no_convention
 
 
 def test_karma_angular_convention_with_context():
@@ -61,4 +62,10 @@ def test_no_convention_without_args():
 def test_no_convention_with_args():
     message = no_convention.just_message('Message')
     if not message == 'Message\n':
+        raise AssertionError()
+
+
+def test_atom_convention():
+    message = atom.atom_convention('CaNary', 'STUFF')
+    if not message == ":canary: Stuff\n":
         raise AssertionError()
