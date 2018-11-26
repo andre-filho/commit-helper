@@ -1,3 +1,4 @@
+# dependencies imports
 from os import system
 # utils imports
 from .text_utils import debug

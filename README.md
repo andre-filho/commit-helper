@@ -30,15 +30,33 @@ Sometimes we, the developers, go _full-loco_ while programming and make mistakes
 
 ## Screenshots
 
-<div style="margin-right:auto;margin-left:auto;">
-	<img src="assets/commit.gif"/>
-    <img src="assets/--tudo.gif"/>
-    <img src="assets/--co-author.gif"/>
-    <img src="assets/--debug.gif"/>
-    <img src="assets/--no-file.gif"/>
-    <img src="assets/--convention.gif"/>
-</div>
+### Initial commit
 
+<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### Normal commit
+
+<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### Co-authored commit
+
+<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### Fast commit
+
+<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### Debugging and commiting
+
+<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### All-in-one commit
+
+<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### Getting help for writing in a convention
+
+<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 
 ## Installation
@@ -56,21 +74,27 @@ will show you the usage and options for your commit. All of them are optional
 for the sake of not losing your precious time.
 
 ```bash
-  $ commit -h
-  usage: generator.py [-h] [--co-author CO_AUTHOR] [--no-generate NO_FILE]
-                    [--convention {angular,changelog,symphony,message}]
+ $ commit -h
+usage: commit [-h] [-t TAG] [-m MESSAGE] [-ct CONTEXT] [-ca CO_AUTHOR] [-nf]
+              [-c {angular,karma,tagged,symphony,message}] [-d]
 
-  A commit formatter tool to help you follow commit conventions.
+A commit formatter tool to help you follow commit conventions.
 
-  optional arguments:
-    -h, --help            show this help message and exit
-    -ca, --co-author CO_AUTHOR
-                          make your friend an co-author to the commit
-    -nf, --no-file
-                          disables the creation of a commiter.yml file
-    -c, --convention {angular,changelog,symphony,message}
-                          Selects a convention to be used for the commit.
-                          Required if there is no commiter.yml file.
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TAG, --tag TAG     Pass your commit tag directly
+  -m MESSAGE, --message MESSAGE
+                        Pass your commit message directly
+  -ct CONTEXT, --context CONTEXT
+                        Pass your commit context directly
+  -ca CO_AUTHOR, --co-author CO_AUTHOR
+                        Make your friend an co-author to the commit
+  -nf, --no-file        Disables the creation of a commiter.yml file
+  -c {angular,karma,tagged,symphony,message}, --convention {angular,karma,tagged,symphony,message}
+                        Selects a convention to be used for the commit.
+                        Required if there's no commiter.yml file.
+  -d, --debug           Toggles debug option
+
 ```
 
 So, if you want to write a co-authored commit, you should use:
@@ -82,7 +106,7 @@ $ commit --co-author "foo bar doritous <foobar@douritos.com>"
 Or if you are using this for the first time in your project:
 
 ```bash
-$ commit --convention changelog
+$ commit --convention tagged
 ```
 
 To work even more smoothly, have in your working directory a file named **commiter.yml**. In this file you must pass the commit convention that you want to use, following the example:
@@ -96,7 +120,7 @@ convention: karma   # tag(context): commit message
 
 # or
 
-convention: changelog # TAG: commit message
+convention: tagged # TAG: commit message
 
 # or
 
@@ -121,9 +145,9 @@ Supported conventions available:
 
  - angular
  - karma
- - changelog
+ - tagged
  - symphony
- - a custom one that you may invent ;)
+ - a custom one that you may create :)
 
  ## Troubleshooting
  If after you've installed commit-helper the `commit` or `commit-helper` commands are not usable at the command line, check if `$HOME/.local/bin` is on your PATH. If not, add it on your .bashrc file by running:

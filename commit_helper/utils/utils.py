@@ -4,28 +4,20 @@ from yaml import dump
 from .text_utils import notify
 from .text_utils import handle_context_arg
 from .text_utils import handle_tag_message_args
-from commit_helper.conventions.karma_angular import angular_convention
-from commit_helper.conventions.changelog import changelog_convention
+from commit_helper.conventions.atom import atom_convention
+from commit_helper.conventions.tagged import tagged_convention
 from commit_helper.conventions.symphony_cmf import symphony_convention
+from commit_helper.conventions.karma_angular import karma_angular_convention
 
 
 supported_conventions = [
     "angular",
     "karma",
-    "changelog",
+    "tagged",
     "symphony",
     "message",
+    "atom",
 ]
-
-menu = """
-    What type of commit convention are you using?
-
-    default: Just the message
-    1: Karma/Angular
-    2: Conventional changelog
-    3: Symfony CMF
-
-    """
 
 
 def gen_co_author(co_author):
@@ -77,6 +69,10 @@ def parser_cli():
     parser.add_argument('-d', '--debug', action='store_true', dest='debug',
                         help='Toggles debug option')
 
+    parser.add_argument('-s', '--show', dest='show_convention_tags',
+                        default='False', action='store_true',
+                        help='Shows the rules of a given convention')
+
     return parser
 
 
@@ -98,12 +94,15 @@ def handle_conventioned_commit(convention, args):
 
     if convention == 'angular' or convention == 'karma':
         context = handle_context_arg(args.context)
-        commit_message = angular_convention(tag, msg, context)
+        commit_message = karma_angular_convention(tag, msg, context)
 
-    elif convention == 'changelog':
-        commit_message = changelog_convention(tag, msg)
+    elif convention == 'tagged':
+        commit_message = tagged_convention(tag, msg)
 
     elif convention == 'symphony':
         commit_message = symphony_convention(tag, msg)
+
+    elif convention == 'atom':
+        commit_message = atom_convention(tag, message)
 
     return commit_message

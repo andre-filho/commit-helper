@@ -5,6 +5,7 @@ import commit_helper.utils.text_utils as text_utils
 from commit_helper.utils.colors import RESET
 from commit_helper.utils.colors import DEBUG_COLOR
 from commit_helper.utils.colors import NOTIFY_COLOR
+from commit_helper.utils.colors import HELP
 
 
 def test_get_text():
@@ -63,6 +64,13 @@ def test_debug(capsys):
     text_utils.debug('msg', 666, show=True)
     captured = capsys.readouterr()
     if not captured.out == DEBUG_COLOR + "DEBUG: msg ~> 666" + RESET + "\n":
+        raise AssertionError()
+
+
+def test_no_debug(capsys):
+    text_utils.debug('msg', 666, show=False)
+    captured = capsys.readouterr()
+    if not captured.out is '':
         raise AssertionError()
 
 
@@ -128,4 +136,11 @@ def test_handle_context_arg_without_args():
     context = text_utils.handle_context_arg()
 
     if not context == 'context':
+        raise AssertionError()
+
+
+def test_print_help(capsys):
+    text_utils.print_help('msg')
+    captured = capsys.readouterr()
+    if not captured.out == HELP + "msg" + RESET + "\n":
         raise AssertionError()
