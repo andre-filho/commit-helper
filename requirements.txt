@@ -7,3 +7,4 @@ pytest-cov==2.6.0
 codeclimate-test-reporter==0.2.3
 codacy-coverage==1.3.11
 colored==1.3.93
+pytest-watch==4.2.0

@@ -1,11 +1,13 @@
+# dependencies imports
 import yaml
+# utils imports
 import commit_helper.utils.utils as utils
 import commit_helper.utils.text_utils as text_utils
-
+# color imports
+from commit_helper.utils.colors import HELP
 from commit_helper.utils.colors import RESET
 from commit_helper.utils.colors import DEBUG_COLOR
 from commit_helper.utils.colors import NOTIFY_COLOR
-from commit_helper.utils.colors import HELP
 
 
 def test_get_text():

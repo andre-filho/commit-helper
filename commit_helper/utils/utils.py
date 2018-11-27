@@ -90,17 +90,17 @@ def validate_commiter_file(stream_file):    # pragma: no cover
 
 
 def handle_conventioned_commit(convention, args):
-    tag, msg = handle_tag_message_args(args.tag, args.message)
+    tag, message = handle_tag_message_args(args.tag, args.message)
 
     if convention == 'angular' or convention == 'karma':
         context = handle_context_arg(args.context)
-        commit_message = karma_angular_convention(tag, msg, context)
+        commit_message = karma_angular_convention(tag, message, context)
 
     elif convention == 'tagged':
-        commit_message = tagged_convention(tag, msg)
+        commit_message = tagged_convention(tag, message)
 
     elif convention == 'symphony':
-        commit_message = symphony_convention(tag, msg)
+        commit_message = symphony_convention(tag, message)
 
     elif convention == 'atom':
         commit_message = atom_convention(tag, message)
