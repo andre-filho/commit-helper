@@ -1,8 +1,8 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
+  - '3.4'
+  - '3.5'
+  - '3.6'
 install:
   - pip install -r requirements.txt
 script:
@@ -15,3 +15,11 @@ after_script:
   - python-codacy-coverage -r coverage.xml
 notification:
   email: false
+deploy:
+  provider: pypi
+  skip_existing: true
+  user: andre-filho
+  password:
+    secure: RV6AhYvfh59he3VxLPJMCaP3oZYgoLZ4KlIL0QJ0MUyRnc7TevVsWC0ySeaUup6kkP8uaGNT2iPAQETCs8u6oXLJlwbjZ1z+DP2LhJqgDm/aR1H15jjQwR3Baprrz8Lmge08TGzlJdtdrerj+oaHP2cLDs/ImszDdFTCB5rGUmo/pvpXvWmYpwi5Fd7by2Q4G+KkDpQb0IpLTt/iOJh0R+LpW3kO5hAkLB/xpPt2CcOYIeq0Lhd0jOT6W415/vm8DTY53kVDoZFYcII//gQvJaBMOgEtxVneRexzKe1WQymFqEeaM7wdlJK8AU6g2VWQHstoSnG5sRg0vK3GG26oR33B6WSg0b14u4J/R3ruHW530doqKLS6mIwDG8fdaBCClQLtcblcQB6Q5AwsNt9Dw4kjw8U39GcvovbB3iT254yuajvz1tt8uAUCI1vax9RnvlqPGIBlgcm1KDEPio4XK9mdTCtypu5HBg6NKZUa5X4/GJ+KbDu5rWcDzt68AD3u2QA6YBhHn4N05fE5ty+KgMC0Bi6CysrM+dh4pr++BzXk3mRju0YQ1RYJN1iXVWaEMMUT4UD45+7V9Wvja750+tO2gFhLW2llK6lPHmjdmpzU8/PRsFvWtA2O7pT7R/bU0YLxpNDgxfMxQaVX1qMCtaEq8YUHWcyXiq4/rzmC04A=
+  on:
+    branch: master
