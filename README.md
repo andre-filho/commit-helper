@@ -147,6 +147,8 @@ Supported conventions available:
  - karma
  - tagged
  - symphony
+ - atom
+ - only message (no convention)
  - a custom one that you may create :)
 
  ## Troubleshooting
