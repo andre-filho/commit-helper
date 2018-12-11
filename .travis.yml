@@ -21,9 +21,9 @@ after_script:
 notification:
   email: false
 
-after_success: python setup.py sdist bdist_wheel
-
-before_deploy: "echo 'Beggining deploy...'"
+before_deploy:
+  - echo 'Beggining deploy...'
+  - python3 setup.py sdist bdist_wheel
 
 deploy:
   - provider: pypi
