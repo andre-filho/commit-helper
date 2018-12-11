@@ -32,32 +32,39 @@ Sometimes we, the developers, go _full-loco_ while programming and make mistakes
 
 ### Initial commit
 
-<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/generate-file.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 ### Normal commit
 
-<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/commit.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### Commit without generating a configuration file
+
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/--no-file.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 ### Co-authored commit
 
-<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/co-author.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 ### Fast commit
 
-<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/single-line.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 ### Debugging and commiting
 
-<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/--debug.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 ### All-in-one commit
 
-<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/all.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
+
+### Help
+
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/flag-h.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 ### Getting help for writing in a convention
 
-<img src="" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
-
+<img src="https://raw.githubusercontent.com/andre-filho/commit-helper/master/assets/gifs/tag-help.gif" style="min-width:200px;margin-left:auto;margin-right:auto;"/>
 
 ## Installation
 
@@ -65,6 +72,14 @@ In order to install one of our older versions, check our [previous releases](PRE
 
 ```bash
 $ pip3 install commit-helper
+```
+
+## Updating your current version
+
+If you already have one of our `pip` releases installed in your machine and want to update to the latest version, use the command:
+
+```bash
+$ pip3 install --upgrade commit-helper
 ```
 
 ## Usage and configuration
