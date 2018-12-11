@@ -22,6 +22,7 @@ notification:
   email: false
 
 before_deploy:
+  - echo 'Beggining deploy...'
   - python3 setup.py build
   - python3 setup.py sdist bdist_wheel
 
