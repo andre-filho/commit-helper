@@ -10,7 +10,7 @@ install:
 
 script:
 - pytest test/ -v
-- pycodestyle *.py
+- pycodestyle commit_helper/* test/*
 
 after_script:
 - py.test --cov-report term --cov=. --ignore=test/* --cov-report=html

@@ -1,7 +1,8 @@
-import codecs
-from setuptools import setup, find_packages
-from os import path
 import os
+import codecs
+from os import path
+from setuptools import setup
+from setuptools import find_packages
 from pip._internal.req import parse_requirements
 
 here = path.abspath(path.dirname(__file__))
@@ -22,7 +23,7 @@ CLASSIFIERS = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Natural Language :: Portuguese",
-    "License :: OSI Approved :: GNU License",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3.6",
