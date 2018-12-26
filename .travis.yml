@@ -35,7 +35,7 @@ deploy:
       branch: master
 
   - provider: pypi
-    skip_existing: true
+    # skip_existing: true
     user: andre-filho
     password:
       secure: Rfb+aCw0ilPm6Rc2NYrDz1HwMnKoGbzWSBclysuKD2QgKqqJO8avPXsTg54C2cJqFv4y033ycUZUF/a3C6WNwHed4vUAJd9CEEp/6Qs7qp2/OOAwTvecAXRRwS/HGvxv1Zag0fb+Lx63+VmXcJiL0yoxKF5G+6uNtDcoDojI3kfUktcJmzcEZ+h0swnGzeLG8q2yD5NPUYKdRypku9T7ZrMoUbS5puYtYzAOpI/aRy5BDciCYpjr3hfszpLcF6mB6+q7/nkvEG7V3XqYjvzUN0dmInRPKDdlJWNRg8cvsEE+tDFSw04xEbY5DyIskw8zz5dzH9uwSpJFh63yaApIQ8wT6mccrgKN17+aXEaErtGzVhYA9gnAhrRf6A29OqWv/rg2U3aohSDvdfbEgtR20UQz8Xm+FGI6KXap2Ky8+f+DZvB1DhWnRalqSJpmfyVz92K7YDw6CUMFCiVEHLdVMDYOrCCbkfkijvxFt0gvw0DJtGLvKB+K+H9RSvggwExLmzLWHPc02+11VEI7kzaEz6qP4DYd0T+iEvgrI7fVIS9VjL6bnskpuMzoCiK2lX+n7vLTMMwv0somYCrtPtA23uZDECfvbtw/WK+ionvQWqJU249PgfaamuZ8ulw11XFGxnKLeLORIfhBwP8+DNwqVBV6nHWO6twquTmmNtdOBE8=
