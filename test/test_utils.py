@@ -72,7 +72,7 @@ def test_debug(capsys):
 def test_no_debug(capsys):
     text_utils.debug('msg', 666, show=False)
     captured = capsys.readouterr()
-    if not captured.out is '':
+    if captured.out is not '':
         raise AssertionError()
 
 
@@ -124,7 +124,7 @@ def test_handle_tag_message_args_without_args():
 def test_handle_context_arg_with_args():
     context = text_utils.handle_context_arg('context')
 
-    if not context is 'context':
+    if context is not 'context':
         raise AssertionError()
 
 
