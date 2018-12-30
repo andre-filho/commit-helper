@@ -27,19 +27,30 @@ before_deploy:
   - python3 setup.py sdist bdist_wheel
 
 deploy:
-  - provider: pypi
-    skip_existing: true
-    user: andre-filho
-    password:
-      secure: RV6AhYvfh59he3VxLPJMCaP3oZYgoLZ4KlIL0QJ0MUyRnc7TevVsWC0ySeaUup6kkP8uaGNT2iPAQETCs8u6oXLJlwbjZ1z+DP2LhJqgDm/aR1H15jjQwR3Baprrz8Lmge08TGzlJdtdrerj+oaHP2cLDs/ImszDdFTCB5rGUmo/pvpXvWmYpwi5Fd7by2Q4G+KkDpQb0IpLTt/iOJh0R+LpW3kO5hAkLB/xpPt2CcOYIeq0Lhd0jOT6W415/vm8DTY53kVDoZFYcII//gQvJaBMOgEtxVneRexzKe1WQymFqEeaM7wdlJK8AU6g2VWQHstoSnG5sRg0vK3GG26oR33B6WSg0b14u4J/R3ruHW530doqKLS6mIwDG8fdaBCClQLtcblcQB6Q5AwsNt9Dw4kjw8U39GcvovbB3iT254yuajvz1tt8uAUCI1vax9RnvlqPGIBlgcm1KDEPio4XK9mdTCtypu5HBg6NKZUa5X4/GJ+KbDu5rWcDzt68AD3u2QA6YBhHn4N05fE5ty+KgMC0Bi6CysrM+dh4pr++BzXk3mRju0YQ1RYJN1iXVWaEMMUT4UD45+7V9Wvja750+tO2gFhLW2llK6lPHmjdmpzU8/PRsFvWtA2O7pT7R/bU0YLxpNDgxfMxQaVX1qMCtaEq8YUHWcyXiq4/rzmC04A=
+  - provider: script
+    script: bash deploy.sh release
     on:
       branch: master
 
-  - provider: pypi
-    skip_existing: true
-    user: andre-filho
-    password:
-      secure: Rfb+aCw0ilPm6Rc2NYrDz1HwMnKoGbzWSBclysuKD2QgKqqJO8avPXsTg54C2cJqFv4y033ycUZUF/a3C6WNwHed4vUAJd9CEEp/6Qs7qp2/OOAwTvecAXRRwS/HGvxv1Zag0fb+Lx63+VmXcJiL0yoxKF5G+6uNtDcoDojI3kfUktcJmzcEZ+h0swnGzeLG8q2yD5NPUYKdRypku9T7ZrMoUbS5puYtYzAOpI/aRy5BDciCYpjr3hfszpLcF6mB6+q7/nkvEG7V3XqYjvzUN0dmInRPKDdlJWNRg8cvsEE+tDFSw04xEbY5DyIskw8zz5dzH9uwSpJFh63yaApIQ8wT6mccrgKN17+aXEaErtGzVhYA9gnAhrRf6A29OqWv/rg2U3aohSDvdfbEgtR20UQz8Xm+FGI6KXap2Ky8+f+DZvB1DhWnRalqSJpmfyVz92K7YDw6CUMFCiVEHLdVMDYOrCCbkfkijvxFt0gvw0DJtGLvKB+K+H9RSvggwExLmzLWHPc02+11VEI7kzaEz6qP4DYd0T+iEvgrI7fVIS9VjL6bnskpuMzoCiK2lX+n7vLTMMwv0somYCrtPtA23uZDECfvbtw/WK+ionvQWqJU249PgfaamuZ8ulw11XFGxnKLeLORIfhBwP8+DNwqVBV6nHWO6twquTmmNtdOBE8=
+  - provider: script
+    script: bash deploy.sh test
     server: https://test.pypi.org/legacy/
     on:
       branch: development
+
+  # - provider: pypi
+  #   skip_existing: true
+  #   user: andre-filho
+  #   password:
+  #     secure: RV6AhYvfh59he3VxLPJMCaP3oZYgoLZ4KlIL0QJ0MUyRnc7TevVsWC0ySeaUup6kkP8uaGNT2iPAQETCs8u6oXLJlwbjZ1z+DP2LhJqgDm/aR1H15jjQwR3Baprrz8Lmge08TGzlJdtdrerj+oaHP2cLDs/ImszDdFTCB5rGUmo/pvpXvWmYpwi5Fd7by2Q4G+KkDpQb0IpLTt/iOJh0R+LpW3kO5hAkLB/xpPt2CcOYIeq0Lhd0jOT6W415/vm8DTY53kVDoZFYcII//gQvJaBMOgEtxVneRexzKe1WQymFqEeaM7wdlJK8AU6g2VWQHstoSnG5sRg0vK3GG26oR33B6WSg0b14u4J/R3ruHW530doqKLS6mIwDG8fdaBCClQLtcblcQB6Q5AwsNt9Dw4kjw8U39GcvovbB3iT254yuajvz1tt8uAUCI1vax9RnvlqPGIBlgcm1KDEPio4XK9mdTCtypu5HBg6NKZUa5X4/GJ+KbDu5rWcDzt68AD3u2QA6YBhHn4N05fE5ty+KgMC0Bi6CysrM+dh4pr++BzXk3mRju0YQ1RYJN1iXVWaEMMUT4UD45+7V9Wvja750+tO2gFhLW2llK6lPHmjdmpzU8/PRsFvWtA2O7pT7R/bU0YLxpNDgxfMxQaVX1qMCtaEq8YUHWcyXiq4/rzmC04A=
+  #   on:
+  #     branch: master
+
+  # - provider: pypi
+  #   skip_existing: true
+  #   user: andre-filho
+  #   password:
+  #     secure: Rfb+aCw0ilPm6Rc2NYrDz1HwMnKoGbzWSBclysuKD2QgKqqJO8avPXsTg54C2cJqFv4y033ycUZUF/a3C6WNwHed4vUAJd9CEEp/6Qs7qp2/OOAwTvecAXRRwS/HGvxv1Zag0fb+Lx63+VmXcJiL0yoxKF5G+6uNtDcoDojI3kfUktcJmzcEZ+h0swnGzeLG8q2yD5NPUYKdRypku9T7ZrMoUbS5puYtYzAOpI/aRy5BDciCYpjr3hfszpLcF6mB6+q7/nkvEG7V3XqYjvzUN0dmInRPKDdlJWNRg8cvsEE+tDFSw04xEbY5DyIskw8zz5dzH9uwSpJFh63yaApIQ8wT6mccrgKN17+aXEaErtGzVhYA9gnAhrRf6A29OqWv/rg2U3aohSDvdfbEgtR20UQz8Xm+FGI6KXap2Ky8+f+DZvB1DhWnRalqSJpmfyVz92K7YDw6CUMFCiVEHLdVMDYOrCCbkfkijvxFt0gvw0DJtGLvKB+K+H9RSvggwExLmzLWHPc02+11VEI7kzaEz6qP4DYd0T+iEvgrI7fVIS9VjL6bnskpuMzoCiK2lX+n7vLTMMwv0somYCrtPtA23uZDECfvbtw/WK+ionvQWqJU249PgfaamuZ8ulw11XFGxnKLeLORIfhBwP8+DNwqVBV6nHWO6twquTmmNtdOBE8=
+  #   server: https://test.pypi.org/legacy/
+  #   on:
+  #     branch: development
