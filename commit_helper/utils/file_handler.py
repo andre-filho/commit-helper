@@ -1,4 +1,5 @@
 from os import system
+from pathlib import Path
 from yaml import safe_load
 from yaml import YAMLError
 # utils imports
@@ -44,3 +45,13 @@ def handle_file_based_commit(file_path, debug_mode, args):
 
         except YAMLError as err:
             print(err)
+
+
+def get_file_path():     # pragma: no cover
+    commiter = Path('commiter.yml')
+    commit_h = Path('commit-helper.yml')
+
+    if commiter.exists():
+        return commiter
+    else:
+        return commit_h

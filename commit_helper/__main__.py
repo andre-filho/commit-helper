@@ -4,6 +4,7 @@ from pathlib import Path
 from .utils.utils import parser_cli
 from .utils.text_utils import debug
 from .utils.file_handler import handle_file_based_commit
+from .utils.file_handler import get_file_path
 from .utils.flag_commit_handler import convention_flag_handler
 # convention imports
 from .conventions.convention_help_handler import convention_help_handler
@@ -16,7 +17,7 @@ def main():
 
     debug('args variable', args, debug_mode)
 
-    file_path = Path('commiter.yml')
+    file_path = get_file_path()
 
     debug('file_path', file_path, debug_mode)
 

@@ -104,10 +104,10 @@ optional arguments:
                         Pass your commit context directly
   -ca CO_AUTHOR, --co-author CO_AUTHOR
                         Make your friend an co-author to the commit
-  -nf, --no-file        Disables the creation of a commiter.yml file
+  -nf, --no-file        Disables the creation of a commiter.yml or commit-helper.yml file
   -c {angular,karma,tagged,symphony,message}, --convention {angular,karma,tagged,symphony,message}
                         Selects a convention to be used for the commit.
-                        Required if there's no commiter.yml file.
+                        Required if there's no commiter.yml or commit-helper.yml file.
   -d, --debug           Toggles debug option
 
 ```
@@ -124,7 +124,7 @@ Or if you are using this for the first time in your project:
 $ commit --convention tagged
 ```
 
-To work even more smoothly, have in your working directory a file named **commiter.yml**. In this file you must pass the commit convention that you want to use, following the example:
+To work even more smoothly, have in your working directory a file named **commiter.yml or commit-helper.yml**. In this file you must pass the commit convention that you want to use, following the example:
 
 ```yaml
 convention: angular   # tag(context): commit message
@@ -146,7 +146,7 @@ convention: symphony  # [Tag] commit message
 convention: none      # Commit message
 ```
 
-In case that you or your organization does already have a commit convention that is not listed above, you can configure it in the commiter.yml file as following:
+In case that you or your organization does already have a commit convention that is not listed above, you can configure it in the commiter.yml or commit-helper.yml file as following:
 
 ```yaml
 convention: custom
