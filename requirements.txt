@@ -18,7 +18,7 @@ pluggy==0.8.1
 py==1.7.0
 pycodestyle==2.5.0
 pytest==4.2.0
-pytest-cov==2.6.0
+pytest-cov==2.6.1
 pytest-watch==4.2.0
 pyyaml>=4.2b1
 requests==2.21.0
