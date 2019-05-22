@@ -91,6 +91,7 @@ def validate_commiter_file(stream_file):    # pragma: no cover
 
 def handle_conventioned_commit(convention, args):
     tag, message = handle_tag_message_args(args.tag, args.message)
+    commit_message = ''
 
     if convention == 'angular' or convention == 'karma':
         context = handle_context_arg(args.context)
