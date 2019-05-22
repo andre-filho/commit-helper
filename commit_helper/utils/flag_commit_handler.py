@@ -12,6 +12,7 @@ from commit_helper.conventions.no_convention import just_message
 def convention_flag_handler(args, debug_mode):
     convention = str(args.convention)
     debug('convention flag', convention, debug_mode)
+    commit_message = ''
 
     if convention == 'message':
         if args.message is not '':
