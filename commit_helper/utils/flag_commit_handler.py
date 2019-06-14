@@ -1,15 +1,17 @@
-# dependencies imports
 from os import system
-# utils imports
+
 from .text_utils import debug
 from .utils import create_file
 from .utils import gen_co_author
 from .utils import handle_conventioned_commit
-# conventions imports
+
 from commit_helper.conventions.no_convention import just_message
 
 
 def convention_flag_handler(args, debug_mode):
+    """
+    Handles the commit configuration and creation through flags.
+    """
     convention = str(args.convention)
     debug('convention flag', convention, debug_mode)
     commit_message = ''
