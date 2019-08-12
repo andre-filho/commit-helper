@@ -22,8 +22,8 @@ supported_conventions = [
 
 def gen_co_author(co_author):
     """
-    Formats the co-author for putting into the commit body if it is not an empty
-    string.
+    Formats the co-author for putting into the commit body if it is not an
+    empty string.
     """
     if co_author is '':
         return ''
@@ -90,15 +90,18 @@ def dump_convention(config_file):
 # this function forces the program to quit if commiter file is invalid
 def validate_commiter_file(stream_file):    # pragma: no cover
     """
-    Checks if commit-helper file with custom convention has the required fields.
+    Checks if commit-helper file with custom convention has the
+    required fields.
     """
     if stream_file['commit_pattern'] is None or stream_file['context'] is None:
         print(
-            "Error: Your commit-helper file lacks a commit_pattern or context!")
+            "Error: Your commit-helper file lacks a commit_pattern or context!"
+        )
         sys.exit(0)
 
-
 # REFACT: use function dict to keep code clean
+
+
 def handle_conventioned_commit(convention, args):
     """
     Handler for conventioned commits.
@@ -106,17 +109,28 @@ def handle_conventioned_commit(convention, args):
     tag, message = handle_tag_message_args(args.tag, args.message)
     commit_message = ''
 
+    create_commit = dict(
+        {
+            # 'angular': handle_karma_angular,
+            # 'karma': handle_karma_angular,
+            'tagged': tagged_convention,
+            'symphony': symphony_convention,
+            'atom': atom_convention
+        })
+
     if convention == 'angular' or convention == 'karma':
         context = handle_context_arg(args.context)
-        commit_message = karma_angular_convention(tag, message, context)
+        return karma_angular_convention(tag, message, context)
 
-    elif convention == 'tagged':
-        commit_message = tagged_convention(tag, message)
+    commit_message = create_commit[convention](tag, message)
 
-    elif convention == 'symphony':
-        commit_message = symphony_convention(tag, message)
+    # elif convention == 'tagged':
+    #     commit_message = tagged_convention(tag, message)
 
-    elif convention == 'atom':
-        commit_message = atom_convention(tag, message)
+    # elif convention == 'symphony':
+    #     commit_message = symphony_convention(tag, message)
+
+    # elif convention == 'atom':
+    #     commit_message = atom_convention(tag, message)
 
     return commit_message

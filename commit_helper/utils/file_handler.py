@@ -53,8 +53,8 @@ def handle_file_based_commit(file_path, debug_mode, args):
 
 def get_file_path():     # pragma: no cover
     """
-    Searchs on the folder the program was called if there is a commiter.yml or a
-    commit-helper.yml file and returns it's path if exists.
+    Searchs on the folder the program was called if there is a commiter.yml
+    or a commit-helper.yml file and returns it's path if exists.
     """
     commiter = Path('commiter.yml')
     commit_h = Path('commit-helper.yml')
