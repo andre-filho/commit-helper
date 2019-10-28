@@ -25,3 +25,7 @@ def custom_convention(tag, message, config_file, debug_mode):
     debug('pattern post replace', pattern, debug_mode)
     pattern += '\n'
     return pattern
+
+
+def validate_message(msg):
+    pass

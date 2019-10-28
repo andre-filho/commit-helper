@@ -1,4 +1,7 @@
-def tagged_convention(tag, msg):
+import re
+
+
+def tagged_convention(tag, msg) -> str:
     """
     Formats the convention following the tag convention.
 
@@ -8,6 +11,36 @@ def tagged_convention(tag, msg):
     tag = tag.upper()
     composed_message = "%s: %s\n" % (tag, msg)
     return composed_message
+
+
+def is_message_valid(msg) -> bool:
+    """
+    Validates the commit message.
+    """
+
+    valid_tags = [
+        r'\bADD\b',
+        r'\bFEAT\b',
+        r'\bDEL\b',
+        r'\bCHR\b',
+        r'\bMERGE\b',
+        r'\bDOCS\b',
+        r'\bFIX\b',
+        r'\bREF\b',
+        r'\bSTYLE\b',
+        r'\bTEST\b',
+        r'\bCI\b',
+    ]
+
+    comp = ''
+    comp = comp.join(valid_tags)
+
+    regx = r'([%s]+: \w+.*)' % comp
+
+    if re.fullmatch(regx, msg) is None:
+        return False
+
+    return True
 
 
 tagged_convention_help = \

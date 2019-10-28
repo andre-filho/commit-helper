@@ -10,6 +10,10 @@ def symphony_convention(tag, msg):
     return composed
 
 
+def validate_message(msg):
+    pass
+
+
 symphony_convention_help = \
     """
     The symphony CMF convention:

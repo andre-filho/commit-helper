@@ -9,6 +9,36 @@ from .utils.flag_commit_handler import convention_flag_handler
 from .conventions.convention_help_handler import convention_help_handler
 
 
+class CommitHelper:
+    __instance = None
+
+    def __init__(self):
+        """Private constructor for CommitHelper singleton class facade"""
+        if CommitHelper.__instance != None:
+            raise Exception("Singletons are supposed to be single instances!")
+        else:
+            CommitHelper.__instance = self
+
+    @staticmethod
+    def get_instance() -> CommitHelper():
+        """Returns singleton for class"""
+        if CommitHelper.__instance == None:
+            CommitHelper()
+        return CommitHelper.__instance
+
+    @staticmethod
+    def create_commit() -> None:
+        pass
+
+    @staticmethod
+    def configure_convention() -> None:
+        pass
+
+    @staticmethod
+    def show_convention_help() -> None:
+        pass
+
+
 def main():
     """
     Main function. Called by CLI.

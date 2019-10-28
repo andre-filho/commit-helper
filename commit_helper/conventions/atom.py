@@ -11,6 +11,10 @@ def atom_convention(tag, msg):
     return composed_message
 
 
+def validate_message(msg):
+    pass
+
+
 atom_convention_help = \
     """
     The atom convention:

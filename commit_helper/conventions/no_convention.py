@@ -13,3 +13,7 @@ def just_message(msg=''):
 
     composed = "%s\n" % message.capitalize()
     return composed
+
+
+def validate_message(msg):
+    pass
