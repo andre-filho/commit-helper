@@ -1,4 +1,5 @@
 from pathlib import Path
+from pathlib import PosixPath
 
 from .utils.utils import parser_cli
 from .utils.text_utils import debug
@@ -27,44 +28,79 @@ class CommitHelper:
         return CommitHelper.__instance
 
     @staticmethod
-    def create_commit() -> None:
+    def create_commit(args) -> None:
+        """
+        CommitHelper's main function. Here all operations will happen.
+        """
         pass
 
     @staticmethod
-    def configure_convention() -> None:
+    def configure_convention(convention, create_file) -> None:
+        """
+        Works with the commit convention's configuration and the yaml file.
+        """
         pass
 
     @staticmethod
-    def show_convention_help() -> None:
+    def show_convention_help(convention) -> None:
+        """
+        Shows a helper text for assisting the user showing all the existing
+        convention configuration.
+        """
         pass
+
+    # these must be in other class
+    # @staticmethod
+    # def get_file() -> pathlib.Path():
+    #     """
+    #     """
+    #     return get_file_path()
+
+    # @staticmethod
+    # def check_file_existance() -> bool:
+    #     """
+    #     """
+    #     return self.get_file().is_file()
 
 
 def main():
     """
     Main function. Called by CLI.
     """
+
     parser = parser_cli()
     args = parser.parse_args()
-    debug_mode = args.debug
 
-    debug('args variable', args, debug_mode)
+    commit_helper = CommitHelper.get_instance()
+    commit_helper.create_commit(args)
 
-    file_path = get_file_path()
 
-    debug('file_path', file_path, debug_mode)
+# def main():
+#     """
+#     Main function. Called by CLI.
+#     """
+#     parser = parser_cli()
+#     args = parser.parse_args()
+#     debug_mode = args.debug
 
-    if args.show_convention_tags is True:
-        convention_help_handler(file_path, args, debug_mode)
-        return
+#     debug('args variable', args, debug_mode)
 
-    elif args.convention is not '':
-        convention_flag_handler(args, debug_mode)
-        return
+#     file_path = get_file_path()
 
-    elif file_path.is_file():
-        handle_file_based_commit(file_path, debug_mode, args)
-        return
+#     debug('file_path', file_path, debug_mode)
 
-    else:
-        debug('parser full return', parser.parse_args(), debug_mode)
-        parser.print_help()
+#     if args.show_convention_tags is True:
+#         convention_help_handler(file_path, args, debug_mode)
+#         return
+
+#     elif args.convention is not '':
+#         convention_flag_handler(args, debug_mode)
+#         return
+
+#     elif file_path.is_file():
+#         handle_file_based_commit(file_path, debug_mode, args)
+#         return
+
+#     else:
+#         debug('parser full return', parser.parse_args(), debug_mode)
+#         parser.print_help()
