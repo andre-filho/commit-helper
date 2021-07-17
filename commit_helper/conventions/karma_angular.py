@@ -1,4 +1,10 @@
 def karma_angular_convention(tag, msg, context):
+    """
+    Handles the formatting for both karma and angular conventions.
+
+    Convention structure:
+    <tag>(<scope>): <message>
+    """
     tag = tag.lower()
     if context == '':
         composed_message = "%s: %s\n" % (tag, msg)

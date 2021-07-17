@@ -1,14 +1,12 @@
-# dependencies imports
 from yaml import safe_load
 from yaml import YAMLError
-# convention imports
+
 from .atom import atom_convention_help
 from .tagged import tagged_convention_help
 from .karma_angular import karma_convention_help
 from .karma_angular import angular_convention_help
 from .symphony_cmf import symphony_convention_help
-# utils imports
-from commit_helper.utils.colors import HELP
+
 from commit_helper.utils.colors import RESET
 from commit_helper.utils.colors import MIN_ERROR
 from commit_helper.utils.text_utils import debug
@@ -18,6 +16,9 @@ from commit_helper.utils.utils import dump_convention
 
 # TODO: test
 def convention_help_handler(file_path, args, debug_mode):
+    """
+    Handles the user's help request.
+    """
     if file_path.is_file() and args.convention is '':
         debug('Found file for help', str(file_path), debug_mode)
         with open(str(file_path)) as target:
@@ -42,6 +43,9 @@ def convention_help_handler(file_path, args, debug_mode):
 
 # TODO: test
 def get_help_to_defined_convention(convention, debug_mode):
+    """
+    Prints the help menu to the base conventions.
+    """
     debug('recieved convention for help catch', convention, debug_mode)
     if convention == 'angular':
         print_help(angular_convention_help)

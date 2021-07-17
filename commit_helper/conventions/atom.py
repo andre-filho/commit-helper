@@ -1,4 +1,10 @@
 def atom_convention(tag, msg):
+    """
+    Formats the commit following the atom convention format:
+    The atom convention:
+
+    :<tag as emoticon>: <Message>
+    """
     tag = tag.lower()
     msg = msg.capitalize()
     composed_message = ":%s: %s\n" % (tag, msg)

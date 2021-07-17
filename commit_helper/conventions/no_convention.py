@@ -3,6 +3,9 @@ from commit_helper.utils.colors import RESET
 
 
 def just_message(msg=''):
+    """
+    Formats the message to capitalize.
+    """
     if msg == '':
         message = str(input(INPUT_COLOR + "commit message: " + RESET))
     else:
