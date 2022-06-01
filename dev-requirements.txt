@@ -26,6 +26,6 @@ setuptools==62.3.2
 six==1.16.0
 urllib3==1.26.9
 watchdog==2.1.8
-wheel~=0.33.1
+wheel==0.37.1
 
 twine~=1.13.0
