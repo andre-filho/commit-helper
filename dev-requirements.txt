@@ -16,7 +16,7 @@ pathtools~=0.1.2
 pip==22.3
 pluggy>=0.9.0
 py==1.11.0
-pycodestyle~=2.5.0
+pycodestyle==2.9.1
 pytest~=4.4.0
 pytest-cov~=2.6.1
 pytest-watch~=4.2.0
