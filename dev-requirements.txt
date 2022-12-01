@@ -15,7 +15,7 @@ pathlib~=1.0.1
 pathtools~=0.1.2
 pip==22.3.1
 pluggy>=0.9.0
-py~=1.8.0
+py==1.11.0
 pycodestyle~=2.5.0
 pytest~=4.4.0
 pytest-cov~=2.6.1
