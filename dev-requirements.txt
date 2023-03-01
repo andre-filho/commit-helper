@@ -28,4 +28,4 @@ urllib3==1.26.14
 watchdog==2.3.1
 wheel==0.38.4
 
-twine~=1.13.0
+twine==4.0.2
