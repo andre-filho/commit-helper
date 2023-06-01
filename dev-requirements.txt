@@ -13,7 +13,7 @@ idna==3.4
 more-itertools==9.1.0
 pathlib~=1.0.1
 pathtools~=0.1.2
-pip~=19.0.3
+pip==23.1.2
 pluggy>=0.9.0
 py~=1.8.0
 pycodestyle~=2.5.0
