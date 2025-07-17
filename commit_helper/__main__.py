@@ -23,11 +23,11 @@ def main():
 
     debug('file_path', file_path, debug_mode)
 
-    if args.show_convention_tags is True:
+    if args.show_convention_tags == True:
         convention_help_handler(file_path, args, debug_mode)
         return
 
-    elif args.convention is not '':
+    elif args.convention != '':
         convention_flag_handler(args, debug_mode)
         return
 
