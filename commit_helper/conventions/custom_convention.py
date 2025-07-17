@@ -1,9 +1,12 @@
-# custom commits are only acceptable when you have a config file
 from commit_helper.utils.text_utils import debug
 from commit_helper.utils.text_utils import get_context
 
 
+# custom commits are only acceptable when you have a config file
 def custom_convention(tag, message, config_file, debug_mode):
+    """
+    Formats the given arguments to make a custom commit message.
+    """
     debug('tag', tag, debug_mode)
     debug('message', message, debug_mode)
     debug('pattern from file', config_file['commit_pattern'], debug_mode)

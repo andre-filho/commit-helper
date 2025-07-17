@@ -1,4 +1,10 @@
 def tagged_convention(tag, msg):
+    """
+    Formats the convention following the tag convention.
+
+    The tagged convention:
+    <TAG>: <message>
+    """
     tag = tag.upper()
     composed_message = "%s: %s\n" % (tag, msg)
     return composed_message
