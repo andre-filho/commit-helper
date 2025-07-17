@@ -1,23 +1,23 @@
 import os
 import codecs
 from os import path
-from setuptools import setup
-from setuptools import find_packages
-from pip._internal.req import parse_requirements
+from setuptools import setup, find_packages
 
 here = path.abspath(path.dirname(__file__))
 
-with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
-    README = readme.read()
+with open('README.md', encoding='utf-8') as f:
+    long_description = f.read()
+
+with open('VERSION.txt', encoding='utf-8') as f:
+    version = f.read().strip()
 
 # allowes setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-# parse_requirements() returns generator of pip.req.InstallRequirement objects
-INSTALL_REQS = parse_requirements('requirements.txt', session='hack')
+# load requirements
+with open('requirements.txt') as f:
+    REQUIREMENTS = [line.strip() for line in f if line.strip() and not line.startswith('#')]
 
-# reqs is a list of requirements
-REQUIREMENTS = [str(ir.req) for ir in INSTALL_REQS]
 
 CLASSIFIERS = [
     "Development Status :: 5 - Production/Stable",
@@ -36,11 +36,11 @@ setup(  # pragma: no cover
     name='commit-helper',
     description="A python program that helps you write commits following commit conventions",  # nopep8
     url='https://github.com/andre-filho/commit-helper',
-    long_description=codecs.open('README.md', 'rb', 'utf8').read(),
+    long_description=long_description,
     long_description_content_type='text/markdown',
     author='Andre de Sousa Costa Filho',
     author_email='andre.filho001@outlook.com',
-    version=codecs.open('VERSION.txt', 'rb', 'utf8').read(),
+    version=version,
     packages=find_packages(),
     keywords=['commit', 'helper', 'git', 'version', 'versioning'],
     entry_points={
